@@ -9,6 +9,11 @@
 
 print("Loan Approval System - Points Based Example")
 
+# Scoring System
+points = 0
+score = [0,0,0,0,0]
+idx = 0
+
 # Name input
 while True:
     name = input("What is  your name? ").strip()
@@ -28,6 +33,18 @@ while True:
     except:
         print("Enter a valid salary number.")
 
+if salary >= 5000:
+    points += 40
+elif salary >= 3000:
+    points += 25
+elif salary >= 1500:
+    points += 10
+else:
+    points += 0
+
+score[idx] = points
+idx += 1
+
 # Monthly income
 while True:
     try:
@@ -38,6 +55,18 @@ while True:
             break
     except:
         print("Enter a valid income number.")
+
+if income >= 7000:
+    points += 40
+elif income >= 4000:
+    points += 25
+elif income >= 2000:
+    points += 10
+else:
+    points += 0
+
+score[idx] = points
+idx += 1
 
 # Existing loans / debts
 while True:
@@ -50,6 +79,18 @@ while True:
     except:
         print("Enter a valid debt number.")
 
+if debts >= 50000:
+    points -= 40
+elif debts >= 30000:
+    points -= 25
+elif debts >= 10000:
+    points -= 10
+else:
+    points += 0
+
+score[idx] = points
+idx += 1
+
 # Potential mortgage / assets
 while True:
     try:
@@ -61,40 +102,6 @@ while True:
     except:
         print("Enter a valid number for property/mortgage.")
 
-# Scoring System
-points = 0
-
-# Job stability (salary)
-if salary >= 5000:
-    points += 40
-elif salary >= 3000:
-    points += 25
-elif salary >= 1500:
-    points += 10
-else:
-    points += 0
-
-# Monthly income
-if income >= 7000:
-    points += 40
-elif income >= 4000:
-    points += 25
-elif income >= 2000:
-    points += 10
-else:
-    points += 0
-
-# Debts (subtract points)
-if debts >= 50000:
-    points -= 40
-elif debts >= 30000:
-    points -= 25
-elif debts >= 10000:
-    points -= 10
-else:
-    points += 0
-
-# Mortgage/assets
 if mortgage >= 100000:
     points += 30
 elif mortgage >= 50000:
@@ -104,12 +111,18 @@ elif mortgage >= 20000:
 else:
     points += 0
 
-# Decision
-print(f"Hi \n{name}, your total score is: {points}")
+score[idx] = points
 
-if points >= 70:
+points_sum = 0
+for i in score:
+    points_sum += i
+
+# Decision
+print(f"Hi {name}, your total score is: {points}")
+
+if points_sum >= 70:
     print("Loan Approved - Strong financial profile.")
-elif points >= 40:
+elif points_sum >= 40:
     print("Loan Under Review - Moderate profile, may need more information.")
 else:
     print("Loan Denied - Insufficient financial stability.")
