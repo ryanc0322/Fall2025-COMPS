@@ -14,11 +14,8 @@ Part 1: Getting Started with Variables
 Define variables for base pay, location, days and more. 
 '''
 # TODO: Fixed variables go here
-base_pay = 5
 
 # TODO: Driver set variables go here 
-neighborhoods = ["A", "B", "C", "D"]
-days = ["Sunday"]
 
 
 '''
