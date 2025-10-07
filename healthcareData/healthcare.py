@@ -84,17 +84,34 @@ for age in ages:
     if age >= 70:
         over_70 += 1
 
-print(f"Under 18: {under_18}")
-print(f"Between 18 and 30: {between_18_and_30}")    
-print(f"Between 30 and 50: {between_30_and_50}")
-print(f"Between 50 and 70: {between_50_and_70}")
-print(f"Over 70: {over_70}")
-
 total = len(ages)
 
 under_18_percent = (under_18 / total) * 100
+between_18_and_30_percent = (between_18_and_30 / total) * 100
+between_30_and_50_percent = (between_30_and_50 / total) * 100
+between_50_and_70_percent = (between_50_and_70 / total) * 100
+over_70_percent = (over_70 / total) * 100
+
+# print(f"Percentage of patients under 18: {under_18_percent:.2f}%")
+# etc.
+
+female = 0
+male = 0
+for gender in genders:
+    if gender == 'Female':
+        female += 1
+    elif gender == 'Male':
+        male += 1
+
+female_percent = (female / total) * 100
+male_percent = (male / total) * 100
+
+# print(f"Percentage of female patients: {female_percent:.2f}%")
+# print(f"Percentage of male patients: {male_percent:.2f}%")
 
 # Hospital / Doctor representation
+
+
 
 # NOTE: Discussion 
 
