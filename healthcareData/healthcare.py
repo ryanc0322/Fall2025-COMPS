@@ -67,8 +67,32 @@ Part 2: What Can Your Data Tell You?
 '''
 
 # Demographics 
+under_18 = 0
+between_18_and_30 = 0
+between_30_and_50 = 0
+between_50_and_70 = 0
+over_70 = 0
+for age in ages:
+    if age < 18:
+        under_18 += 1
+    if age >= 18 and age < 30:
+        between_18_and_30 += 1
+    if age >= 30 and age < 50:
+        between_30_and_50 += 1
+    if age >= 50 and age < 70:
+        between_50_and_70 += 1
+    if age >= 70:
+        over_70 += 1
 
-# Conditions
+print(f"Under 18: {under_18}")
+print(f"Between 18 and 30: {between_18_and_30}")    
+print(f"Between 30 and 50: {between_30_and_50}")
+print(f"Between 50 and 70: {between_50_and_70}")
+print(f"Over 70: {over_70}")
+
+total = len(ages)
+
+under_18_percent = (under_18 / total) * 100
 
 # Hospital / Doctor representation
 
