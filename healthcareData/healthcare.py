@@ -133,5 +133,20 @@ summit_regional_percent = (summit_regional / total) * 100
 Part 3: Visualizing the Data
 '''
 
-# Condition by age group
-# Treatment
+'''
+Henderson-Johnson Hospital wants to know more about their patients. 
+You have been asked to create a report that includes the following
+visualizations:
+- Number of admissions over time
+- Average length of stay by admission type
+- Total number of each condition
+'''
+
+'''
+The doctors there also want to know if cancer is related to age, so
+they can predict which patients are at higher risk. Create a
+visualization that shows the number of cancer patients by age group.
+'''
+
+
+
