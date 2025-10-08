@@ -1,5 +1,8 @@
 import random
 
+# Basic code for to teach a simple shopping simulator
+# Author: Jamal Omosun 2026'
+
 print(Basic Purchase Simulator:)
 
 while True:
@@ -36,14 +39,14 @@ while balance >= 0:
 
 
 def deposit(amount):
-    account += amount
+    balance += amount
 
 def withdraw(amount):
-    account -= amount
+    balance -= amount
 
 def transfer(amount):
-    account -= amount
-    account1 += amount
+    balance -= amount
+    balance += amount
 
 
 
