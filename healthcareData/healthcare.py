@@ -58,7 +58,7 @@ print(names[0], ages[0], genders[0], blood_types[0], medical_conditions[0], date
 Part 2: What Can Your Data Tell You?
 '''
 
-# Demographics 
+# TODO: Demographics: age and gender
 under_18 = 0
 between_18_and_30 = 0
 between_30_and_50 = 0
@@ -101,21 +101,31 @@ male_percent = (male / total) * 100
 # print(f"Percentage of female patients: {female_percent:.2f}%")
 # print(f"Percentage of male patients: {male_percent:.2f}%")
 
-# Hospital / Doctor representation
+# TODO: Hospital representation
 
-total = len(hospitals)
-hospital_counts = {}
+northview_medical = 0
+riverside_clinic = 0
+henderson_johnson_hospital = 0
+greenfield_health = 0
+summit_regional = 0
 
-for h in hospitals:
-    if h in hospital_counts:
-        hospital_counts[h] += 1
-    else:
-        hospital_counts[h] = 1
+for hospital in hospitals:
+    if hospital == "Northview Medical":
+        northview_medical += 1
+    elif hospital == "Riverside Clinic":
+        riverside_clinic += 1
+    elif hospital == "Henderson-Johnson Hospital":
+        henderson_johnson_hospital += 1
+    elif hospital == "Greenfield Health":
+        greenfield_health += 1
+    elif hospital == "Summit Regional":
+        summit_regional += 1
 
-# Print percentages
-for h, count in hospital_counts.items():
-    percent = (count / total) * 100
-    print(f"{h}: {percent:.2f}%")
+northview_medical_percent = (northview_medical / total) * 100
+riverside_clinic_percent = (riverside_clinic / total) * 100
+henderson_johnson_hospital_percent = (henderson_johnson_hospital / total) * 100
+greenfield_health_percent = (greenfield_health / total) * 100
+summit_regional_percent = (summit_regional / total) * 100
 
 # NOTE: Discussion 
 
