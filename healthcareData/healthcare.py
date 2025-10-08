@@ -11,7 +11,7 @@ Description:
 Part 1: Know Your Data
 '''
 
-filename = "healthcare_dataset_clean.csv"
+filename = "healthcare_data.csv"
 
 # Lists to store each column
 names = []
@@ -28,7 +28,6 @@ discharge_dates = []
 medications = []
 test_results = []
 # TODO: Add the rest of the fields  
-# ?????????????? REMOVE SOME OF THIS DATA ??????????????
 
 # Open the file and read the data
 with open(filename) as file:
@@ -50,9 +49,7 @@ with open(filename) as file:
         test_results.append(fields[11])
 
 # Print the first row 
-print(names[0], ages[0], genders[0], blood_types[0], medical_conditions[0],
-      dates_of_admission[0], doctors[0], hospitals[0], admission_types[0],
-      discharge_dates[0], medications[0], test_results[0])
+print(names[0], ages[0], genders[0], blood_types[0], medical_conditions[0], dates_of_admission[0], doctors[0], hospitals[0], admission_types[0], discharge_dates[0], medications[0], test_results[0])
 # Print all medical conditions 
 # for condition in medical_conditions:
     # print(condition)
