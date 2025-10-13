@@ -1,6 +1,6 @@
 import random
 
-print(Basic Purchase Simulator:)
+print("Basic Purchase Simulator:")
 
 while True:
     name = input("What is your name? \n>")
