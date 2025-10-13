@@ -31,6 +31,14 @@ while True:
         age = int(age)
         break
 
+# Gender input
+while True:
+    gender = input("What is your gender? 'M' or 'F'\n>")
+    if gender not in ["M", "F"]:
+        print("Enter a valid gender.")
+    else:
+        break
+
 # Problem 1
 # Employment input - Ask if the applicant is employed or not. Your code should:
 # (1) prevent the program from continuing without a valid input by using 'while loop'
@@ -143,7 +151,8 @@ for i in range(3):
         print("Loan Denied, Sorry.")
         exit()
 
-if employed == "yes":
+if employed == "yes" and gender == "M":
     print("Loan Accepted. Congrats.")
 else:
     print("Loan Denied, Sorry.")
+

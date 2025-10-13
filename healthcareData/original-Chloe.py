@@ -31,7 +31,7 @@ test_results = []
 # Open the file and read the data
 with open(filename) as file:
     next(file)  # Skip the header line
-    for line in file:
+    for line in file: 
         fields = line.strip().split(",") 
         names.append(fields[0])
         ages.append(int(fields[1]))
@@ -157,28 +157,28 @@ cancer patients by age group.
 
 # TODO: Admissions per year at Henderson-Johnson Hospital
 
-henderson_johnson_admission_dates = []
-for i in range(len(dates_of_admission)):
-    if hospitals[i] == "Henderson-Johnson Hospital":
-        henderson_johnson_admission_dates.append(dates_of_admission[i])
+# henderson_johnson_admission_dates = []
+# for i in range(len(dates_of_admission)):
+#     if hospitals[i] == "Henderson-Johnson Hospital":
+#         henderson_johnson_admission_dates.append(dates_of_admission[i])
 
-converted_dates = []
-for date in henderson_johnson_admission_dates:
-    date = datetime.strptime(date, "%Y-%m-%d")
-    converted_dates.append(date)
+# converted_dates = []
+# for date in henderson_johnson_admission_dates:
+#     date = datetime.strptime(date, "%Y-%m-%d")
+#     converted_dates.append(date)
 
-year_counts = {}
-for date in converted_dates:
-    year = date.year
-    if year in year_counts:
-        year_counts[year] += 1
-    else:
-        year_counts[year] = 1
+# year_counts = {}
+# for date in converted_dates:
+#     year = date.year
+#     if year in year_counts:
+#         year_counts[year] += 1
+#     else:
+#         year_counts[year] = 1
 
-sorted_years = sorted(year_counts.keys())
-counts = []
-for y in sorted_years:
-    counts.append(year_counts[y])
+# sorted_years = sorted(year_counts.keys())
+# counts = []
+# for y in sorted_years:
+#     counts.append(year_counts[y])
 
 # plt.figure(figsize=(8, 4))
 # plt.plot(sorted_years, counts)
@@ -188,27 +188,27 @@ for y in sorted_years:
 # plt.xticks(sorted_years)
 # plt.show()
 
-# TODO: Cancer patients by age group at Henderson-Johnson Hospital
+# # TODO: Cancer patients by age group at Henderson-Johnson Hospital
 
-cancer_ages = []
-for i in range(len(ages)):
-    if hospitals[i] == "Henderson-Johnson Hospital" and medical_conditions[i] == "Cancer":
-        cancer_ages.append(ages[i])
+# cancer_ages = []
+# for i in range(len(ages)):
+#     if hospitals[i] == "Henderson-Johnson Hospital" and medical_conditions[i] == "Cancer":
+#         cancer_ages.append(ages[i])
 
-age_groups = ["0-17", "18-29", "30-49", "50-69", "70+"]
-age_counts = [0] * len(age_groups)
+# age_groups = ["0-17", "18-29", "30-49", "50-69", "70+"]
+# age_counts = [0] * len(age_groups)
 
-for age in cancer_ages:
-    if age <= 17:
-        age_counts[0] += 1
-    elif age <= 29:
-        age_counts[1] += 1
-    elif age <= 49:
-        age_counts[2] += 1
-    elif age <= 69:
-        age_counts[3] += 1
-    else:
-        age_counts[4] += 1
+# for age in cancer_ages:
+#     if age <= 17:
+#         age_counts[0] += 1
+#     elif age <= 29:
+#         age_counts[1] += 1
+#     elif age <= 49:
+#         age_counts[2] += 1
+#     elif age <= 69:
+#         age_counts[3] += 1
+#     else:
+#         age_counts[4] += 1
 
 # plt.figure(figsize=(8, 4))
 # plt.bar(age_groups, age_counts)
