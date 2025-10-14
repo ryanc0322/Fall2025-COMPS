@@ -4,28 +4,25 @@
 # It considers only yes/no factors without nuance which does not 
 # consider ranges which is inaccurate.
 
-print("Loan Approval System - Mediocre")
-
 # array that will contain the applicant's score 
 # you should treat the score array to contain user information in the following format:
 # [employment status, job stability, monthly income, existing loans, existing assets]
 score = [0,0,0,0,0]
-idx = 0
 
 # Example: Employment status
 # This will ask the user if the user is employed or not. 
 # We will accept either 'yes' or 'no' from user response. 
-while True:
-    employed = input("Are you employed? (yes/no): ").strip().lower()
-    if employed != "yes" and employed != "no":
-        print("Please enter 'yes' or 'no'.")
-    else:
-        break
+def get_employment() :
+    while True:
+        employed = input("Are you employed? (yes/no): ").strip().lower()
+        if employed != "yes" and employed != "no":
+            print("Please enter 'yes' or 'no'.")
+        else:
+            break
 
 # we update our score array by changing the first index to '1' if the user is employed
-if employed == 'yes':
-    score[idx] = 1
-idx += 1
+    if employed == 'yes':
+        score[0] = 1
 
 # Problem 1 - Job stability
 # Your task is to implement the user input for whether they have stable job of not. 
@@ -34,16 +31,16 @@ idx += 1
 # (2) while loop to prevent the program from continuing without a valid input
 # (3) clear error message
 # (4) update (if the user input is 'yes') the score array at the correct index
-while True:
-    stable_job = input("Do you have a stable job? \n'yes' if you are paid by salary. (yes/no): ").strip().lower()
-    if stable_job != "yes" and stable_job != "no":
-        print("Please enter 'yes' or 'no'.")
-    else:
-        break
+def get_job_stability() :
+    while True:
+        stable_job = input("Do you have a stable job? \n'yes' if you are paid by salary. (yes/no): ").strip().lower()
+        if stable_job != "yes" and stable_job != "no":
+            print("Please enter 'yes' or 'no'.")
+        else:
+            break
 
-if stable_job == 'yes':
-    score[idx] = 1
-idx += 1
+    if stable_job == 'yes':
+        score[1] = 1
 
 # Problem 2 - Monthly income
 # Your task is to implement the user input for whether they have a monthly income or not
@@ -54,16 +51,16 @@ idx += 1
 # (4) update (if the user input is 'yes') the score array at the correct index
 # (5) Write a short (2-3 sentence) reflection on how a binary answer might be inappropriate 
 #     in this context of trying to know user's monthly income for loan approval
-while True:
-    monthly_income = input("Do you have any monthly income? (yes/no): ").strip().lower()
-    if monthly_income != "yes" and monthly_income != "no":
-        print("Please enter 'yes' or 'no'.")
-    else:
-        break
+def get_monthly_income() :
+    while True:
+        monthly_income = input("Do you have any monthly income? (yes/no): ").strip().lower()
+        if monthly_income != "yes" and monthly_income != "no":
+            print("Please enter 'yes' or 'no'.")
+        else:
+            break
 
-if monthly_income == 'yes':
-    score[idx] = 1
-idx += 1
+    if monthly_income == 'yes':
+        score[2] = 1
 
 
 # Problem 3 - Existing Loans / Debts
@@ -78,16 +75,16 @@ idx += 1
 #   * Hint: employment, monthly income would be a positive factor, whereas loan/debt would be 'negative factor'
 # (5) Write a short (2-3 sentence) reflection on how a binary answer might be inappropriate 
 #     in this context of trying to know user's existing debt/loan for loan approval
-while True:
-    has_loans = input("Do you have existing loans or debts? (yes/no): ").strip().lower()
-    if has_loans != "yes" and has_loans != "no":
-        print("Please enter 'yes' or 'no'.")
-    else:
-        break
+def get_existing_loans() :
+    while True:
+        has_loans = input("Do you have existing loans or debts? (yes/no): ").strip().lower()
+        if has_loans != "yes" and has_loans != "no":
+            print("Please enter 'yes' or 'no'.")
+        else:
+            break
 
-if has_loans == 'yes':
-    score[idx] = -1
-idx += 1
+    if has_loans == 'yes':
+        score[3] = -1
 
 
 # Problem 4 - Assets
@@ -99,26 +96,40 @@ idx += 1
 # (4) update (if the user input is 'yes') the score array at the correct index
 # (5) Write a short (2-3 sentence) reflection on how a binary answer might be inappropriate 
 #     in this context of trying to know user's existing assets for loan approval
-while True:
-    has_assets = input("Do you own any assets (house, property, etc.)? (yes/no): ").strip().lower()
-    if has_assets != "yes" and has_assets != "no":
-        print("Please enter 'yes' or 'no'.")
-    else:
-        break
+def get_assets() :
+    while True:
+        has_assets = input("Do you own any assets (house, property, etc.)? (yes/no): ").strip().lower()
+        if has_assets != "yes" and has_assets != "no":
+            print("Please enter 'yes' or 'no'.")
+        else:
+            break
 
-if has_assets == 'yes':
-    score[idx] = 1
+    if has_assets == 'yes':
+        score[4] = 1
 
 # Problem 5 - Loan Approval / Denial
 # 'score_sum' is a variable that will tally up the binary response received from the user so far
 # Use a for loop to iterate through the score array and update the score_sum at each iteration
 # if 'score_sum' is greater than or equal to 3, then the loan is approved. Else, denied.
-score_sum = 0
-for i in range(len(score)):
-    score_sum += score[i]
-    
-if score_sum >= 3:
-    print("Loan Approved")
-else:
-    print("Loan Denied")
+def approval() :
+    score_sum = 0
+    get_employment()
+    get_job_stability()
+    get_monthly_income()
+    get_existing_loans()
+    get_assets()
 
+    for i in range(len(score)):
+        score_sum += score[i]
+    
+    if score_sum >= 3:
+        print("Loan Approved")
+    else:
+        print("Loan Denied")
+
+def main() :
+    print("Loan Approval System - Mediocre")
+    approval()
+
+if __name__=='__main__':
+    main()
