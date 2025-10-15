@@ -8,14 +8,14 @@ import re
 @pytest.fixture(scope="session")
 def captured_sections():
     """
-    Run student's healthcare.py (or solution.py) ONCE without showing Matplotlib windows.
-    Capture the printed output and split by section markers like 'Answer to ...'.
+    Run student's healthcare.py (or solution.py) without showing Matplotlib pop-ups.
+    Capture the printed output and split by section markers like 'Answer to ...' for easier comparisons
     """
     env = os.environ.copy()
     env["MPLBACKEND"] = "Agg"  # Disable visualization popups from matplotlib
 
     result = subprocess.run(
-        [sys.executable, "solution.py"],  # or "healthcare.py" for student submission
+        [sys.executable, "solution.py"],  # or "healthcare.py" for student submission. this should be the code you want to test
         capture_output=True,
         text=True,
         env=env
