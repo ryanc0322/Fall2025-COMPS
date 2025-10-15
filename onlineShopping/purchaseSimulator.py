@@ -35,31 +35,64 @@ def read_items(filename):
         sys.exit(1)
     return items, categories, prices
 
-# TODO: Print the first row 
+def format_money(x):
+    return f"${x:,.2f}"
 
-# TODO: Print the items, prices and categories
+def choose_item(items, categories, prices):
+    idx = random.randrange(len(items))
+    return {
+        "name": items[idx],
+        "category": categories[idx],
+        "base_price": prices[idx],
+        "quality": random.choice(QUALITY),
+    }
+
 
 '''
-Part 2: User Inputs
+Part 1: User Inputs
 '''
+# TODO: Make function to prompt users for name and balance
+def get_user_info():
 
 # TODO: Make function to prompt users for yes and no
+def prompt_yes_no(prompt):
 
 # TODO: Make function to prompt users for a float
+def prompt_float(prompt, allow_zero=False):
+
+def prompt_end_shopping():
+
+'''
+Part 2: Adding Purchases
+'''
+
+def calculate_surcharge(active_plans):
+    return sum(p['install'] for p in active_plans if p['remaining'] > 0)
+
+# TODO: Function that displays the items
+def display_offer(item, surcharge, total):
+
+# TODO: Function that applies the purchase to the balance as well as the active payment plans
+def apply_purchase(balance, total_price, active_plans):
+
+# TODO: Function to create a payment plan
+def create_payment_plan_if_offered(item_name, base_price, active_plans):
+
+# TODO: Function that prompts users to add a deposit to their account after a purchase
+def post_purchase_deposit(balance):
+
+# TODO: Function that prompts users to deposit money into their account if their balance drops below 0 or cancel the prucahse otherwise
+def ensure_funds(balance, total_price):
+
+
 
 '''
 Part 3: Creating the Simulator
 '''
 
-# TODO: Prompt user for name and current balance
+# TODO: Put everything we've worked on together in main
 
-# TODO: Purchase items and subtract from balance
-
-# TODO: Prompt users to add funds to balance
-
-# TODO: End program when user balance goes below 0 and they don't deposit
-
-# TODO : Add purchase plan for items > $35
+def main():
 
 
 

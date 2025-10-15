@@ -54,113 +54,115 @@ def prompt_yes_no(prompt):
             return False
         print("Please answer 'y' or 'n'.")
 
+def prompt_end_shopping():
+    # Returns True if the user wants to end shopping
+    return prompt_yes_no("Do you want to end the shopping experience now?")
+
 
 def format_money(x):
     return f"${x:,.2f}"
+
+def get_user_info():
+    name = input("What's your name? ").strip() or "Shopper"
+    balance = prompt_float("Enter your current balance: ")
+    return name, balance
+
+def choose_item(items, categories, prices):
+    idx = random.randrange(len(items))
+    return {
+        "name": items[idx],
+        "category": categories[idx],
+        "base_price": prices[idx],
+        "quality": random.choice(QUALITY),
+    }
+
+
+def display_offer(item, surcharge, total):
+    print(f"Offer: {item['name']} ({item['quality']}) in {item['category']} for {format_money(item['base_price'])}")
+    if surcharge > 0:
+        print(f"  + {format_money(surcharge)} in installment charges from active payment plans")
+    print(f"  -> TOTAL charge if purchased now: {format_money(total)}")
+
+
+def apply_purchase(balance, total_price, active_plans):
+    # Deduct total price
+    balance = round(balance - total_price, 2)
+    print(f"Purchased item for {format_money(total_price)}. New balance: {format_money(balance)}")
+    # Decrement remaining installments and remove finished plans
+    for plan in active_plans:
+        if plan.get('remaining', 0) > 0:
+            plan['remaining'] -= 1
+    active_plans = [p for p in active_plans if p.get('remaining', 0) > 0]
+    return balance, active_plans
+
+
+def create_payment_plan_if_offered(item_name, base_price, active_plans):
+    if base_price <= 35:
+        return active_plans
+    want_plan = prompt_yes_no(f"This item is over $35. Offer payment plan spreading a 30% increased cost over the next 3 purchases? ")
+    if not want_plan:
+        return active_plans
+    extra_total = round(base_price * 0.30, 2)
+    per_install = round(extra_total / 3, 2)
+    # Use one plan object with remaining=3 and install equal to per_install (last cent differences ignored)
+    active_plans.append({"remaining": 3, "install": round(extra_total / 3, 2), "source": item_name})
+    print(f"Payment plan added: extra {format_money(extra_total)} spread as {format_money(round(extra_total/3,2))} over the next 3 purchases.")
+    return active_plans
+
+
+def post_purchase_deposit(balance):
+    if prompt_yes_no("Would you like to deposit additional funds into your balance?"):
+        dep = prompt_float("Enter amount to deposit: ", allow_zero=False)
+        balance = round(balance + dep, 2)
+        print(f"New balance: {format_money(balance)}")
+    return balance
+
+def calculate_surcharge(active_plans):
+    return sum(p['install'] for p in active_plans if p['remaining'] > 0)
+
+def ensure_funds(balance, total_price):
+    while balance < total_price:
+        print(f"Insufficient funds. You have {format_money(balance)}, need {format_money(total_price)}.")
+        add = input("Enter amount to deposit or 'c' to cancel purchase: ").strip().lower()
+        if add == 'c':
+            print("Purchase cancelled.")
+            return balance, False
+        try:
+            amt = float(add)
+            if amt <= 0:
+                print("Enter a positive amount to deposit.")
+                continue
+            balance += amt
+            print(f"Deposited {format_money(amt)}. New balance: {format_money(balance)}")
+        except ValueError:
+            print("Enter a valid number or 'c'.")
+    return balance, True
 
 
 def main():
     print("Basic Purchase Simulator")
 
-    name = input("What's your name? ").strip() or "Shopper"
-    balance = prompt_float("Enter your current balance: ")
-
-    filename = "purchaseItems.csv"
-    items, categories, prices = read_items(filename)
-    if not items:
-        print("No items found in catalog. Exiting.")
-        return
-
-    # Active payment plans: each entry is dict {"remaining": int, "install": float, "source": str}
+    name, balance = get_user_info()
+    items, categories, prices = read_items("purchaseItems.csv")
     active_plans = []
-
-    print(f"Welcome, {name}. Starting balance: {format_money(balance)}")
-
     while True:
-        print("\nCurrent balance:", format_money(balance))
-
-        # Choose a random item
-        idx = random.randrange(len(items))
-        item_name = items[idx]
-        category = categories[idx]
-        base_price = prices[idx]
-        quality = random.choice(QUALITY)
-
-        # Calculate surcharge from active plans that still have installments remaining
-        surcharge = sum(p['install'] for p in active_plans if p['remaining'] > 0)
-        total_price = round(base_price + surcharge, 2)
-
-        print(f"Offer: {item_name} ({quality}) in {category} for {format_money(base_price)}")
-        if surcharge > 0:
-            print(f"  + {format_money(surcharge)} in installment charges from active payment plans")
-        print(f"  -> TOTAL charge if purchased now: {format_money(total_price)}")
-
-        buy = prompt_yes_no("Do you want to buy this item?")
-        if not buy:
-            cont = prompt_yes_no("Do you want to continue shopping?")
-            if not cont:
-                print("Thanks for visiting. Goodbye.")
+        item = choose_item(items, categories, prices)
+        surcharge = calculate_surcharge(active_plans)
+        total = round(item["base_price"] + surcharge, 2)
+        display_offer(item, surcharge, total)
+        if not prompt_yes_no("Buy?"):
+            if prompt_end_shopping():
+                print("Thank you for visiting the shop!")
                 break
-            else:
-                continue
+            continue
+        balance, proceed = ensure_funds(balance, total)
+        if not proceed:
+            continue
+        balance, active_plans = apply_purchase(balance, total, active_plans)
+        active_plans = create_payment_plan_if_offered(item["name"], item["base_price"], active_plans)
+        balance = post_purchase_deposit(balance)
 
-        # Ensure balance sufficient, allow deposits until user cancels
-        while balance < total_price:
-            print(f"Insufficient funds. You have {format_money(balance)}, need {format_money(total_price)}.")
-            add = input("Enter amount to deposit or 'c' to cancel purchase: ").strip().lower()
-            if add == 'c':
-                print("Purchase cancelled.")
-                break
-            try:
-                amt = float(add)
-                if amt <= 0:
-                    print("Enter a positive amount to deposit.")
-                    continue
-                balance += amt
-                print(f"Deposited {format_money(amt)}. New balance: {format_money(balance)}")
-            except ValueError:
-                print("Enter a valid number or 'c'.")
-        else:
-            # This block runs if while condition is False (i.e., balance >= total_price)
-            # Deduct total_price
-            balance = round(balance - total_price, 2)
-            print(f"Purchased {item_name} for {format_money(total_price)}. New balance: {format_money(balance)}")
 
-            # Apply installment decrements for plans that were charged this purchase
-            for plan in active_plans:
-                if plan['remaining'] > 0:
-                    plan['remaining'] -= 1
-            # Remove finished plans
-            active_plans = [p for p in active_plans if p['remaining'] > 0]
-
-            # Offer a payment plan for expensive items (> $35)
-            if base_price > 35:
-                want_plan = prompt_yes_no(f"This item is over $35. Offer payment plan spreading a 30% increased cost over the next 3 purchases? ")
-                if want_plan:
-                    extra_total = round(base_price * 0.30, 2)
-                    per_install = round(extra_total / 3, 2)
-                    # To ensure total extra sums to extra_total, adjust last installment
-                    installs = [per_install, per_install, extra_total - 2 * per_install]
-                    # Create plan entries where the per-installment will be applied across the next 3 purchases
-                    for amt in installs:
-                        active_plans.append({"remaining": 1, "install": amt, "source": item_name})
-                    # But this representation applies each as a single-install plan over next 3 purchases; to keep tracking
-                    # We instead want a plan that ticks down 3 times; convert to single plan that will charge "per_install" three times
-                    # We'll simplify by creating one plan object with remaining=3 and install=round(extra_total/3,2)
-                    # (Replace what we just appended)
-                    active_plans = [p for p in active_plans if p.get('source') != item_name]
-                    active_plans.append({"remaining": 3, "install": round(extra_total / 3, 2), "source": item_name})
-                    print(f"Payment plan added: extra {format_money(extra_total)} spread as {format_money(round(extra_total/3,2))} over the next 3 purchases.")
-
-            # After each purchase, prompt user to optionally add funds
-            if prompt_yes_no("Would you like to deposit additional funds into your balance?"):
-                dep = prompt_float("Enter amount to deposit: ", allow_zero=False)
-                balance = round(balance + dep, 2)
-                print(f"New balance: {format_money(balance)}")
-
-        # End of purchase handling
-
-    # End while
 
 
 if __name__ == '__main__':
