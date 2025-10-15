@@ -39,11 +39,11 @@ def format_money(x):
     return f"${x:,.2f}"
 
 def choose_item(items, categories, prices):
-    idx = random.randrange(len(items))
+    ix = random.randrange(len(items))
     return {
-        "name": items[idx],
-        "category": categories[idx],
-        "base_price": prices[idx],
+        "name": items[ix],
+        "category": categories[ix],
+        "base_price": prices[ix],
         "quality": random.choice(QUALITY),
     }
 
