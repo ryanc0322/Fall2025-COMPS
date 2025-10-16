@@ -15,7 +15,8 @@ def get_name() :
             print("Enter a valid name.")
         else:
             break
-
+    return name
+    
 # Age input
 def get_age() :
     while True:
@@ -30,6 +31,7 @@ def get_age() :
             # you must use the int() function to convert the input to an int type
             age = int(age)
             break
+    return age
 
 # Gender input
 def get_gender() :
@@ -39,6 +41,7 @@ def get_gender() :
             print("Enter a valid gender.")
         else:
             break
+    return gender
 
 # Problem 1
 # Employment input - Ask if the applicant is employed or not. Your code should:
@@ -56,6 +59,7 @@ def get_employment() :
             print("Please enter 'yes' or 'no'.")
         else:
             break
+    return employed
 
 
 # Problem 2
@@ -72,6 +76,8 @@ def get_address() :
             print("Please give a valid home address.")
             continue
         break
+    return addr
+
 def get_phone() :
     while True:
         contact = input("Enter your phone number. \n>")
@@ -85,6 +91,7 @@ def get_phone() :
             print("Phone number should not contain negative number.")
         else:
             break
+    return contact
 
 # Problem 3 
 # contacts and address of the 3 people to "refer" to if the applicant fails to pay the loan
@@ -118,6 +125,9 @@ def get_references() :
             else:
                 home[i] = home_addr
                 break
+    references = list(zip(phone, home))
+        
+    return references
 
 # Problem 4:
 # ask a set of questions asking for consent that "traps" the applicant into big liability
@@ -156,7 +166,7 @@ def approval() :
     name = get_name()
     age = get_age()
     gender = get_gender()
-    employed = get_employment
+    employed = get_employment()
     address = get_address()
     phone = get_phone()
     references = get_references()
