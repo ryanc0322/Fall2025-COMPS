@@ -65,20 +65,20 @@ def offer_product(products, categories, prices):
         "price": prices[idx]
     }
 
-def apply_purchase(balance, total):
+def apply_purchase(balance, cost):
     """
     Subtracts the cost of a purchase from the user's balance
 
     Parameters:
     balance (float): current balance
-    total (float): cost of the purchase, plus any payment plan fees
+    cost (float): cost of the purchase, plus any payment plan fees
 
     Returns:
     new_balance (float): the updated balance
     """
 
     # TODO: Implement function
-    new_balance = balance - total
+    new_balance = balance - cost
     return new_balance
 
 def create_payment_plan(payment_plans, product_price):
