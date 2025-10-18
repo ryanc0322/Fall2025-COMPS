@@ -47,9 +47,10 @@ def checkList(givenList)  :
     return total
 
 def amountMadeFunc(base_pay, num_jobs_per_hr, hours, day_multiplier, neighborhood_multiplier):
-    dayMultiplier = checkList(days)
-    neighborhoodMultiplier = checkList(neighborhoods)
-    amountMade = base_pay * num_jobs_per_hr * hours * dayMultiplier * neighborhoodMultiplier
+    day_mult_value = list(day_multiplier.values())[0]
+    neighborhood_mult_value = list(neighborhood_multiplier.values())[0]
+
+    amountMade = base_pay * num_jobs_per_hr * hours * day_mult_value * neighborhood_mult_value
     return amountMade
 
 def deductionFunc(milesTraveled, fuelEfficiency, costOfFuel):
