@@ -3,39 +3,21 @@ import sys
 import os
 import pytest
 import re
-from workPlanner2 import amountMadeFunc
-from workPlanner2 import deductionFunc
-from workPlanner2 import valueFunc
+from workInfo import checkList
+from workPlanner2 import amountMadeFunc, deductionFunc, valueFunc
 
+def test_amountMade_zero():
+    result = amountMadeFunc(10, 2, 0, {'Monday':1}, {'A':1.05})
+    assert result == 0
 
-def checkList(givenList)  :
-    total = 1
-    if not givenList :
-        raise ValueError("There are no entries in the given list.  \nPlease check both your neighborhoods and your days lists and make sure that there are values there that correspond to what the list is looking for.")
-    seen = set()
-    first = givenList[0]
-    if first in dayParams.multipliers :
-        for item in givenList :
-            if item in seen :
-                raise ValueError("There is a duplicate day in your list of days.  \nMake sure there is only one of each of the days you are selecting")
-            elif item in dayParams.multipliers:
-                seen.add(item)
-                total = total * dayParams.multipliers[item]
-            else :
-                 raise ValueError("You have entered something invalid to your days list.  \nPlease check to make sure there are only either 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', or 'Sunday' in your list.")
+def test_deduction_precision():
+    assert deductionFunc(100, 25, 3.5) == pytest.approx((100/25) * 3.5)
 
-    elif first in neighborhoodParams.multipliers :
-        for item in givenList :
-            if item in seen :
-                raise ValueError("There is a duplicate neighborhood in your list of days.  \nMake sure there is only one of each of the neighborhoods you are selecting")
-            elif item in neighborhoodParams.multipliers:
-                seen.add(item)
-                total = total * neighborhoodParams.multipliers[item]
-            else:
-                raise ValueError("You have entered something invalid to your neighborhoods list.  \nPlease check to make sure there are only either 'A', 'B', 'C', or 'D' in your list.")
-    else :
-        raise ValueError("You have entered something into the list that is not a valid day or neighborhood.\nPlease check both your neighborhoods and you days lists and make sure that you only have either 'A', 'B', 'C', or 'D' in the neighborhoods list \nand 'Monday', 'Tuesday', 'Wednesday', 'Thursday', or 'Friday' in the days list.")
-    return total
+def test_value_negative_deduction():
+    # ensure value returned matches amountMade - deduction
+    a = 200.0
+    d = 250.0
+    assert valueFunc(a, d) == pytest.approx(a - d)
 
 
 @pytest.mark.parametrize(
