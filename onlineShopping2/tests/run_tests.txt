@@ -1,0 +1,9 @@
+pytests:
+    from Fall2025-COMPS\onlineShopping2\tests\test_shopping.py
+    -> python -m pytest -v
+
+coverage: 
+    from Fall2025-COMPS\onlineShopping2\tests\test_shopping.py
+    -> python -m coverage run -m pytest
+    -> python -m coverage html 
+    -> start htmlcov/index.html

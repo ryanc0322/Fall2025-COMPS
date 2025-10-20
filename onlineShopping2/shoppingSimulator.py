@@ -58,7 +58,7 @@ def offer_product(products, categories, prices):
     """
 
     # TODO: Implement function
-    return None
+    pass
 
 def apply_purchase(balance, total):
     """
@@ -73,7 +73,7 @@ def apply_purchase(balance, total):
     """
 
     # TODO: Implement function
-    return None
+    pass
 
 def create_payment_plan(payment_plans, product_price):
     """
@@ -92,7 +92,7 @@ def create_payment_plan(payment_plans, product_price):
     payment plans (list of dict): Updated list of payment plans including the new plan.
     """
     # TODO: Implement function
-    return None
+    pass
 
 def apply_payment_plans(balance, payment_plans):
     """
@@ -108,7 +108,7 @@ def apply_payment_plans(balance, payment_plans):
         - updated_plans (list of dict): Payment plans with decremented 'num_payments' and finished plans removed.
     """
     # TODO: Implement function
-    return None
+    pass
 
 def discount(price):
     """
@@ -123,7 +123,7 @@ def discount(price):
         - discount_flag (int): 1 if a discount was applied, 0 otherwise.
     """
     # TODO: Implement function
-    return None
+    pass
 
 def simulation():
     """

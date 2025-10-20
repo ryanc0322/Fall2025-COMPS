@@ -2,8 +2,7 @@
 shoppingSimulator.py
 
 Jamal Omosun
-Editited by Chloe Simanek
-
+Edited by Chloe Simanek
 Description:
 '''
 
@@ -71,7 +70,7 @@ def apply_purchase(balance, cost):
 
     Parameters:
     balance (float): current balance
-    cost (float): cost of the purchase, plus any payment plan fees
+    cost (float): cost of the purchase
 
     Returns:
     new_balance (float): the updated balance
