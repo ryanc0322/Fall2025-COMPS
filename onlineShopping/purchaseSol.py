@@ -63,7 +63,7 @@ def format_money(x):
     return f"${x:,.2f}"
 
 def get_user_info():
-    name = input("What's your name? ").strip() or "Shopper"
+    name = input("What's your name? ").strip()
     balance = prompt_float("Enter your current balance: ")
     return name, balance
 

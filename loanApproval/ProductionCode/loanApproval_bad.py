@@ -152,7 +152,8 @@ def ask_questions() :
             else:
                 answers[i] = answer
                 break
-    return answers[i]
+    
+    return answers
 
 # Problem 5
 # Loan approval stage
@@ -162,7 +163,19 @@ def ask_questions() :
 # Your task is to utilize the data inputted from user so far and:
 # (1) add two new clauses that would approve the loan 
 # (2) add two new clauses that would deny the loan
-def approval() :
+def approval(answers, employed, gender) :
+
+    for i in range(3):
+        if answers[i] == "no":
+            return "Loan Denied, Sorry."
+
+    if employed == "yes" and gender == "M":
+        return "Loan Accepted. Congrats."
+    else:
+        return "Loan Denied, Sorry."
+
+def main() :
+    print("Loan Approval System - Bad Example")
     name = get_name()
     age = get_age()
     gender = get_gender()
@@ -171,20 +184,7 @@ def approval() :
     phone = get_phone()
     references = get_references()
     answers = ask_questions()
-
-    for i in range(3):
-        if answers[i] == "no":
-            print("Loan Denied, Sorry.")
-            exit()
-
-    if employed == "yes" and gender == "M":
-        print("Loan Accepted. Congrats.")
-    else:
-        print("Loan Denied, Sorry.")
-
-def main() :
-    print("Loan Approval System - Bad Example")
-    approval()
+    print(approval(answers, employed, gender))
 
 if __name__=='__main__':
     main()
