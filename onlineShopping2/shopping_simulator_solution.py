@@ -12,14 +12,13 @@ import sys
 
 # ! DO NOT MODIFY THIS FUNCTION !
 def read_items(filename): # pragma: no cover
-    """
-    Reads product information from a CSV file.
+    """Reads product information from a CSV file.
 
-    Parameters:
-    filename (str): The path to the CSV file.
+    Args:
+        filename (str): Path to CSV file
     
     Returns:
-    tuple: Three lists containing product names, categories, and prices.
+        tuple: Three lists containing product names, categories, and prices.
     """
     products = []
     categories = []
@@ -27,7 +26,7 @@ def read_items(filename): # pragma: no cover
     try:
         with open(filename, newline='') as fh:
             reader = csv.reader(fh)
-            headers = next(reader, None)
+            next(reader, None)
             for row in reader:
                 if len(row) < 3:
                     continue
@@ -56,8 +55,6 @@ def offer_product(products, categories, prices):
     dict: A dictionary with keys "name", "category", and "price"
 
     """
-
-    # TODO: Implement function
     idx = random.randrange(len(products))
     return {
         "name": products[idx],
@@ -76,8 +73,6 @@ def apply_purchase(balance, cost):
     Returns:
     new_balance (float): the updated balance
     """
-
-    # TODO: Implement function
     new_balance = balance - cost
     return new_balance
 
@@ -97,7 +92,6 @@ def create_payment_plan(payment_plans, product_price):
     Returns:
     payment plans (list of dict): Updated list of payment plans including the new plan.
     """
-    # TODO: Implement function
     num_payments = 3
     surcharge = product_price * 0.10
     payment_amount = (product_price + surcharge) / num_payments
@@ -116,10 +110,10 @@ def apply_payment_plans(balance, payment_plans):
     Returns:
     tuple:
         - balance (float): Updated balance
-        - updated_plans (list of dict): Payment plans with decremented 'num_payments' and finished plans removed.
+        - updated_plans (list of dict): Payment plans with decremented
+          'num_payments' and finished plans removed.
     """
-    # TODO: Implement function
-    total_payment = 0 
+    total_payment = 0
     for plan in payment_plans:
         total_payment += plan["payment_amount"]
     balance = apply_purchase(balance, total_payment)
@@ -144,12 +138,10 @@ def apply_discount(price):
         - final_price (float): The price after any discount.
         - discount_flag (int): 1 if a discount was applied, 0 otherwise.
     """
-    # TODO: Implement function
     discount_flag = 0
     final_price = price
-    if random.choice([True, False]):  
+    if random.choice([True, False]):
         percent = random.randint(5, 15) / 100
         final_price = round(price * (1 - percent), 2)
         discount_flag = 1
     return final_price, discount_flag
-

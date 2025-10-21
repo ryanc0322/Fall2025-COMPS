@@ -1,5 +1,5 @@
 import pytest
-from shoppingSimulatorSol import *
+from shopping_simulator_solution import *
 import csv
 import random
 
