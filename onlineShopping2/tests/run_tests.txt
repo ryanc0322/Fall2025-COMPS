@@ -10,4 +10,8 @@ coverage:
 
 pylint: 
     from Fall2025-COMPS\onlineShopping2
-    python -m pylint --rcfile=tests\.pylintrc shopping_simulator_solution.py
+    -> python -m pylint --rcfile=tests\.pylintrc shopping_simulator_solution.py
+
+test script: 
+    from Fall2025-COMPS\onlineShopping2
+    -> python run_tests.py
