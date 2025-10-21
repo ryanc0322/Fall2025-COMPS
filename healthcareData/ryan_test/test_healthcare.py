@@ -83,3 +83,27 @@ Summit Regional: 9.91%""".strip()
     assert captured_sections["Hospital representation"] == expected_output, (
         f"\nEXPECTED (Part 3):\n{expected_output}\n\nGOT:\n{captured_sections['Hospital representation']}"
     )
+
+
+"""Check for student code syntax using pylint"""
+def test_pylint_student_code():
+    result = subprocess.run(
+        ["pylint", "--rcfile=.pylintrc", "solution.py"],
+        capture_output=True,
+        text=True
+    )
+
+    print("\n")
+    print("--- PYLINT ANALYSIS START ---")
+    print(result.stdout)
+    print("--- PYLINT ANALYSIS END ---")
+
+    # find pylint score from the ouput
+    match = re.search(r"rated at ([\d\.]+)/10", result.stdout)
+    if not match:
+        pytest.fail("Error: No pylint score found.")
+
+    score = float(match.group(1))
+
+    # Fail the test if score < 8.0
+    assert score >= 8.0, f"Pylint score too low: {score}/10"
