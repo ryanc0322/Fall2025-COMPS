@@ -1,11 +1,13 @@
-'''
-shoppingSimulatorSolutions.py
+"""
+shopping_simulator.py
 
-Jamal Omosun
-Editited by Chloe Simanek
+Jamal Omosun and Chloe Simanek
 
-Description:
-'''
+Description: This program includes several functions that are used in an
+online shopping simulator. The functions handle product offers, payment plans,
+discounts and purchases. Use run_simulator.py to run the full simulation.
+"""
+# TODO: fix docstrings 
 
 import random
 import csv

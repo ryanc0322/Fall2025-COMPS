@@ -1,10 +1,11 @@
-'''
-shoppingSimulator.py
+"""
+shopping_simulator_solution.py
 
-Jamal Omosun
-Edited by Chloe Simanek
-Description:
-'''
+Jamal Omosun and Chloe Simanek
+
+Description: Student solution for shopping simulator functions.
+Use run_simulator.py to run the full simulation.
+"""
 
 import random
 import csv
@@ -24,7 +25,7 @@ def read_items(filename): # pragma: no cover
     categories = []
     prices = []
     try:
-        with open(filename, newline='') as fh:
+        with open(filename, newline="") as fh:
             reader = csv.reader(fh)
             next(reader, None)
             for row in reader:

@@ -1,5 +1,5 @@
-# import shoppingSimulator.py 
-from shoppingSimulatorSol import *
+# import shopping simulator functions
+from shopping_simulator_solution import *
 
 def simulation():
     """

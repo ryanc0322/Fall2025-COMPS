@@ -12,16 +12,15 @@ persistent=yes
 # Minimum Python version 
 py-version=3.11
 
-[REPORTS]
 
-# Python expression which should return a score less than or equal to 10
-evaluation=max(0, 0 if fatal else 10.0 - ((float(5 * error + warning + refactor + convention) / statement) * 10))
+[REPORTS]
 
 # Activate the evaluation score
 score=yes
 
 # Detailed report summary
-reports=yes
+reports=no
+
 
 [BASIC]
 
@@ -92,89 +91,24 @@ max-line-length=100
 # else.
 single-line-if-stmt=no
 
-[MESSAGES CONTROL]
-
-# Only show warnings with the listed confidence levels. Leave empty to show
-# all. Valid levels: HIGH, CONTROL_FLOW, INFERENCE, INFERENCE_FAILURE,
-# UNDEFINED.
-confidence=HIGH,
-           CONTROL_FLOW,
-           INFERENCE,
-           INFERENCE_FAILURE,
-           UNDEFINED
-
-# Disable the message, report, category or checker with the given id(s). You
-# can either give multiple identifiers separated by comma (,) or put this
-# option multiple times (only on the command line, not in the configuration
-# file where it should appear only once). You can also use "--disable=all" to
-# disable everything first and then re-enable specific checks. For example, if
-# you want to run only the similarities checker, you can use "--disable=all
-# --enable=similarities". If you want to run only the classes checker, but have
-# no Warning level messages displayed, use "--disable=all --enable=classes
-# --disable=W".
-disable=raw-checker-failed,
-        bad-inline-option,
-        locally-disabled,
-        file-ignored,
-        suppressed-message,
-        useless-suppression,
-        deprecated-pragma,
-        use-symbolic-message-instead,
-        use-implicit-booleaness-not-comparison-to-string,
-        use-implicit-booleaness-not-comparison-to-zero
-
-# Enable the message, report, category or checker with the given id(s). You can
-# either give multiple identifier separated by comma (,) or put this option
-# multiple time (only on the command line, not in the configuration file where
-# it should appear only once). See also the "--disable" option for examples.
-enable=
 
 [MISCELLANEOUS]
 
 # List of note tags to take in consideration, separated by a comma.
 notes=TODO
 
+disable=unspecified-encoding
 
 [SIMILARITIES]
 
-# Comments are removed from the similarity computation
+# The following are removed from the similarity computation:
 ignore-comments=yes
-
-# Docstrings are removed from the similarity computation
 ignore-docstrings=yes
-
-# Imports are removed from the similarity computation
 ignore-imports=yes
-
-# Signatures are removed from the similarity computation
 ignore-signatures=yes
 
 # Minimum lines number of a similarity.
 min-similarity-lines=4
-
-
-[SPELLING]
-
-# Limits count of emitted suggestions for spelling mistakes.
-max-spelling-suggestions=4
-
-# Spelling dictionary name. No available dictionaries : You need to install
-# both the python package and the system dependency for enchant to work.
-spelling-dict=
-
-# List of comma separated words that should be considered directives if they
-# appear at the beginning of a comment and should not be checked.
-spelling-ignore-comment-directives=fmt: on,fmt: off,noqa:,noqa,nosec,isort:skip,mypy:
-
-# List of comma separated words that should not be checked.
-spelling-ignore-words=
-
-# A path to a file that contains the private dictionary; one word per line.
-spelling-private-dict-file=
-
-# Tells whether to store unknown words to the private dictionary (see the
-# --spelling-private-dict-file option) instead of raising a message.
-spelling-store-unknown-words=no
 
 
 [STRING]
@@ -187,10 +121,3 @@ check-quote-consistency=yes
 # on implicit string concatenation in sequences defined over several lines.
 check-str-concat-over-line-jumps=yes
 
-[VARIABLES]
-
-# Tells whether unused global variables should be treated as a violation.
-allow-global-unused-variables=yes
-
-# Argument names that match this expression will be ignored.
-ignored-argument-names=_.*|^ignored_|^unused_
