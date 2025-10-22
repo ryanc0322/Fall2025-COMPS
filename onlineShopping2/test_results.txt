@@ -21,12 +21,14 @@ tests/test_shopping.py::test_apply_discount_random_value PASSED          [ 85%]
 tests/test_shopping.py::test_apply_discount_flag PASSED                  [ 92%]
 tests/test_shopping.py::test_apply_discount_correct_calculation PASSED   [100%]
 
-============================= 14 passed in 0.03s ==============================
+============================= 14 passed in 0.02s ==============================
 
 
 PYLINT RESULTS 
+************* Module shopping_simulator_solution
+shopping_simulator_solution.py:94:0: C0301: Line too long (87/80) (line-too-long)
 
---------------------------------------------------------------------
-Your code has been rated at 10.00/10 (previous run: 10.00/10, +0.00)
+------------------------------------------------------------------
+Your code has been rated at 9.82/10 (previous run: 9.46/10, +0.36)
 
 

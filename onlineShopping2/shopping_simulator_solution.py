@@ -25,8 +25,8 @@ def read_items(filename): # pragma: no cover
     categories = []
     prices = []
     try:
-        with open(filename, newline="") as fh:
-            reader = csv.reader(fh)
+        with open(filename, newline="") as f:
+            reader = csv.reader(f)
             next(reader, None)
             for row in reader:
                 if len(row) < 3:

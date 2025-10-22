@@ -26,6 +26,7 @@ reports=no
 
 # Naming style 
 argument-naming-style=snake_case
+variable-rgx=[a-z_][a-z0-9_]{2,30}$
 variable-naming-style=snake_case
 function-naming-style=snake_case
 
@@ -49,7 +50,7 @@ good-names=i,
            k,
            ex,
            Run,
-           _
+           f
 
 [DESIGN]
 # Default 
