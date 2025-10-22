@@ -85,7 +85,7 @@ indent-after-paren=4
 indent-string='    '
 
 # Maximum number of characters on a single line. 
-max-line-length=100
+max-line-length=80
 
 # Allow the body of an if to be on the same line as the test if there is no
 # else.
@@ -98,6 +98,9 @@ single-line-if-stmt=no
 notes=TODO
 
 disable=unspecified-encoding
+
+# Trailing whitespace 
+enable=C0303
 
 [SIMILARITIES]
 
