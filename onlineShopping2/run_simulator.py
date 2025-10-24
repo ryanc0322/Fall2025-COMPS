@@ -1,129 +1,5 @@
-'''
-shoppingSimulatorSolutions.py
-
-Jamal Omosun
-Editited by Chloe Simanek
-
-Description:
-'''
-
-import random
-import csv
-import sys
-
-def read_items(filename):
-    """
-    Reads product information from a CSV file.
-
-    Parameters:
-    filename (str): The path to the CSV file.
-    
-    Returns:
-    tuple: Three lists containing product names, categories, and prices.
-    """
-    products = []
-    categories = []
-    prices = []
-    try:
-        with open(filename, newline='') as fh:
-            reader = csv.reader(fh)
-            headers = next(reader, None)
-            for row in reader:
-                if len(row) < 3:
-                    continue
-                categories.append(row[0].strip())
-                products.append(row[1].strip())
-                try:
-                    prices.append(float(row[2]))
-                except ValueError:
-                    prices.append(0.0)
-    except FileNotFoundError:
-        print(f"Could not find {filename}. Exiting.")
-        sys.exit(1)
-    return products, categories, prices
-
-
-def offer_product(products, categories, prices):
-    """
-    Offers a random product from the available items
-
-    Parameters:
-    products (list): List of product names
-    categories (list): List of product categories
-    prices (list): List of product prices
-
-    Returns:
-    dict: A dictionary with keys "name", "category", and "price"
-
-    """
-
-    # TODO: Implement function
-    return None
-
-def apply_purchase(balance, total):
-    """
-    Subtracts the cost of a purchase from the user's balance
-
-    Parameters:
-    balance (float): current balance
-    total (float): cost of the purchase, plus any payment plan fees
-
-    Returns:
-    new_balance (float): the updated balance
-    """
-
-    # TODO: Implement function
-    return None
-
-def create_payment_plan(payment_plans, product_price):
-    """
-    Creates a payment plan with the following characteristics:
-        - 10% surcharge on the product price
-        - 3 equal payments
-    
-    Parameters:
-    payment_plans (list of dict): Existing active payment plans.
-        Each dictionary contains:
-            - 'num_payments' (int): Payments remaining.
-            - 'payment_amount' (float): Amount per payment.
-    product_price (float): Price of the product to create a plan for.
-
-    Returns:
-    payment plans (list of dict): Updated list of payment plans including the new plan.
-    """
-    # TODO: Implement function
-    return None
-
-def apply_payment_plans(balance, payment_plans):
-    """
-    Applies all active payment plans to the shoppers's balance.
-
-    Parameters:
-    balance (float): Current balance.
-    payment_plans (list of dict): Active payment plans.
-
-    Returns:
-    tuple:
-        - balance (float): Updated balance
-        - updated_plans (list of dict): Payment plans with decremented 'num_payments' and finished plans removed.
-    """
-    # TODO: Implement function
-    return None
-
-def discount(price):
-    """
-    Randomly applies a 5-15% discount 50% of the time.
-
-    Parameters:
-    price (float): Original price of the product.
-
-    Returns:
-    tuple:
-        - final_price (float): The price after any discount.
-        - discount_flag (int): 1 if a discount was applied, 0 otherwise.
-    """
-    # TODO: Implement function
-    return None
+# import shopping simulator functions
+from shopping_simulator_solution import *
 
 def simulation():
     """
@@ -186,7 +62,7 @@ def simulation():
         # Offer a product using the offer_product function
         product = offer_product(products, categories, prices)
         # Apply discount using the discount function
-        final_price, discount_flag = discount(product['price'])
+        final_price, discount_flag = apply_discount(product['price'])
         # Display product details
         print(f"--------------------------- Product Offer ---------------------------")
         print(f"Offer: {product['name']} in {product['category']}")
@@ -249,7 +125,6 @@ def simulation():
 
 def main():
     simulation()
-
 
 if __name__ == "__main__":
     main()

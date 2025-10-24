@@ -1,0 +1,34 @@
+PYTEST RESULTS 
+
+============================= test session starts =============================
+platform win32 -- Python 3.11.9, pytest-8.4.2, pluggy-1.5.0 -- C:\Users\chloe\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\python.exe
+cachedir: .pytest_cache
+rootdir: C:\Users\chloe\COMPS\Fall2025-COMPS\onlineShopping2
+collecting ... collected 14 items
+
+tests/test_shopping.py::test_empty_functions PASSED                      [  7%]
+tests/test_shopping.py::test_offer_product_keys PASSED                   [ 14%]
+tests/test_shopping.py::test_offer_product_valid_row PASSED              [ 21%]
+tests/test_shopping.py::test_offer_product_randomness PASSED             [ 28%]
+tests/test_shopping.py::test_apply_purchase PASSED                       [ 35%]
+tests/test_shopping.py::test_create_payment_plan_structure PASSED        [ 42%]
+tests/test_shopping.py::test_create_payment_plan_amount PASSED           [ 50%]
+tests/test_shopping.py::test_apply_payment_plans_total_payment PASSED    [ 57%]
+tests/test_shopping.py::test_apply_payment_plans_decrement PASSED        [ 64%]
+tests/test_shopping.py::test_apply_payment_plans_removal PASSED          [ 71%]
+tests/test_shopping.py::test_apply_discount_random_apply PASSED          [ 78%]
+tests/test_shopping.py::test_apply_discount_random_value PASSED          [ 85%]
+tests/test_shopping.py::test_apply_discount_flag PASSED                  [ 92%]
+tests/test_shopping.py::test_apply_discount_correct_calculation PASSED   [100%]
+
+============================= 14 passed in 0.02s ==============================
+
+
+PYLINT RESULTS 
+************* Module shopping_simulator_solution
+shopping_simulator_solution.py:94:0: C0301: Line too long (87/80) (line-too-long)
+
+------------------------------------------------------------------
+Your code has been rated at 9.82/10 (previous run: 9.46/10, +0.36)
+
+

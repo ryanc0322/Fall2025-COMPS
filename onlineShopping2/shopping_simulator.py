@@ -1,11 +1,13 @@
-'''
-shoppingSimulator.py
+"""
+shopping_simulator.py
 
-Jamal Omosun
-Editited by Chloe Simanek
+Jamal Omosun and Chloe Simanek
 
-Description:
-'''
+Description: This program includes several functions that are used in an
+online shopping simulator. The functions handle product offers, payment plans,
+discounts and purchases. Use run_simulator.py to run the full simulation.
+"""
+# TODO: fix docstrings 
 
 import random
 import csv
@@ -58,28 +60,22 @@ def offer_product(products, categories, prices):
     """
 
     # TODO: Implement function
-    idx = random.randrange(len(products))
-    return {
-        "name": products[idx],
-        "category": categories[idx],
-        "price": prices[idx]
-    }
+    pass
 
-def apply_purchase(balance, cost):
+def apply_purchase(balance, total):
     """
     Subtracts the cost of a purchase from the user's balance
 
     Parameters:
     balance (float): current balance
-    cost (float): cost of the purchase, plus any payment plan fees
+    total (float): cost of the purchase, plus any payment plan fees
 
     Returns:
     new_balance (float): the updated balance
     """
 
     # TODO: Implement function
-    new_balance = balance - cost
-    return new_balance
+    pass
 
 def create_payment_plan(payment_plans, product_price):
     """
@@ -98,12 +94,7 @@ def create_payment_plan(payment_plans, product_price):
     payment plans (list of dict): Updated list of payment plans including the new plan.
     """
     # TODO: Implement function
-    num_payments = 3
-    surcharge = product_price * 0.10
-    payment_amount = (product_price + surcharge) / num_payments
-    new_plan = {"num_payments": num_payments, "payment_amount": payment_amount}
-    payment_plans.append(new_plan)
-    return payment_plans
+    pass
 
 def apply_payment_plans(balance, payment_plans):
     """
@@ -119,18 +110,7 @@ def apply_payment_plans(balance, payment_plans):
         - updated_plans (list of dict): Payment plans with decremented 'num_payments' and finished plans removed.
     """
     # TODO: Implement function
-    total_payment = 0 
-    for plan in payment_plans:
-        total_payment += plan["payment_amount"]
-    balance = apply_purchase(balance, total_payment)
-
-    updated_plans = []
-    for p in payment_plans:
-        p["num_payments"] -= 1
-        if p["num_payments"] > 0:
-            updated_plans.append(p)
-
-    return balance, updated_plans
+    pass
 
 def discount(price):
     """
@@ -145,13 +125,7 @@ def discount(price):
         - discount_flag (int): 1 if a discount was applied, 0 otherwise.
     """
     # TODO: Implement function
-    discount_flag = 0
-    final_price = price
-    if random.choice([True, False]):  
-        percent = random.randint(5, 15) / 100
-        final_price = round(price * (1 - percent), 2)
-        discount_flag = 1
-    return final_price, discount_flag
+    pass
 
 def simulation():
     """
