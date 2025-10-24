@@ -1,53 +1,46 @@
-import unittest
+import pytest
 import subprocess
-from unittest.mock import patch
 from ProductionCode.loanApproval_better import *
 
-class Testget_debt(unittest.TestCase):
-    @patch('builtins.input', side_effect=['yes', '1000', '2000', '3000'])
-    def test_if_debt_is_string(self, mock_input):
-        result = get_debt()
-        self.assertIsInstance(result, list)
-        self.assertEqual(len(result), 3)
-        self.assertEqual(result, [1000, 2000, 3000])
+def test_if_debt_is_string():
+    monkeypatch.setattr('builtins.input', lambda _: ['yes', '1000', '2000', '3000'])
+    result = get_debt()
+    assert isinstance(result, list)
+    assert len(result) == 3
+    assert result == [1000, 2000, 3000]
 
-class Testget_debtNo(unittest.TestCase):
-    @patch('builtins.input', side_effect=['no'])
-    def test_if_debt_is_string(self, mock_input):
-        result = get_debt()
-        self.assertIsInstance(result, list)
-        self.assertEqual(len(result), 3)
-        self.assertEqual(result, [0, 0, 0])
+def test_if_debt_is_string():
+    monkeypatch.setattr('builtins.input', lambda _: ['no'])
+    result = get_debt()
+    assert isinstance(result, list)
+    assert len(result) ==  3
+    assert result == [0, 0, 0]
 
-class Testget_assets(unittest.TestCase):
-    @patch('builtins.input', side_effect=['yes', '1000', '2000', '3000'])
-    def test_if_asset_is_string(self, mock_input):
-        result = get_assets()
-        self.assertIsInstance(result, list)
-        self.assertEqual(len(result), 3)
-        self.assertEqual(result, [1000, 2000, 3000])
+def test_if_asset_is_string():
+    monkeypatch.setattr('builtins.input', lambda _: ['yes', '1000', '2000', '3000'])
+    result = get_assets()
+    assert isinstance(result, list)
+    assert len(result) == 3
+    assert result == [1000, 2000, 3000]
 
-class Testget_assetsNo(unittest.TestCase):
-    @patch('builtins.input', side_effect=['no'])
-    def test_if_debt_is_string(self, mock_input):
-        result = get_assets()
-        self.assertIsInstance(result, list)
-        self.assertEqual(len(result), 3)
-        self.assertEqual(result, [0, 0, 0])
+def test_if_debt_is_string():
+    monkeypatch.setattr('builtins.input', lambda _: ['no'])
+    result = get_assets()
+    assert isinstance(result, list)
+    assert len(result) == 3
+    assert result == [0, 0, 0]
 
-class Testapproval(unittest.TestCase):
-    def test_if_returns_approval(self):
-        result = approval([1000, 1000, 1000], [0, 0, 0], [25000, 20000, 10000])
-        self.assertEqual(result, "Loan Approved - Strong salary, income, acceptable debts, and property value.")
+def test_if_returns_approval():
+    result = approval([1000, 1000, 1000], [0, 0, 0], [25000, 20000, 10000])
+    assert result == "Loan Approved - Strong salary, income, acceptable debts, and property value."
 
-class Testapproval_not_approved(unittest.TestCase):
-    def test_if_returns_disapproval_high_debt(self):
-        result = approval([1000, 1000, 1000], [50000, 2000, 0], [25000, 20000, 10000])
-        self.assertEqual(result, "Loan Denied - Insufficient income or too much debt.")
+def test_if_returns_disapproval_high_debt():
+    result = approval([1000, 1000, 1000], [50000, 2000, 0], [25000, 20000, 10000])
+    assert result == "Loan Denied - Insufficient income or too much debt."
 
-    def test_if_returns_disapproval_low_income(self):
-        result = approval([0, 0, 0], [0, 0, 0], [0, 0, 10000])
-        self.assertEqual(result, "Loan Denied - Insufficient income or too much debt.")
+def test_if_returns_disapproval_low_income():
+    result = approval([0, 0, 0], [0, 0, 0], [0, 0, 10000])
+    assert result == "Loan Denied - Insufficient income or too much debt."
 
          
 

@@ -1,57 +1,48 @@
-import unittest
+import pytest
 import subprocess
-from unittest.mock import patch
 from ProductionCode.loanApproval_bad import *
 
-class Testget_employment(unittest.TestCase):
-    @patch('builtins.input', side_effect=['yes'])
-    def test_if_input_is_string(self, mock_input):
-         result = get_employment()
-         self.assertIsInstance(result, str)
+def test_get_employment(monkeypatch):
+    monkeypatch.setattr('builtins.input', lambda _: 'yes')
+    result = get_employment()
+    assert isinstance(result, str)
 
-class Testget_phone(unittest.TestCase):
-    @patch('builtins.input', side_effect=['123456789'])
-    def test_if_input_is_num(self, mock_input):
-         result = get_phone()
-         self.assertIsInstance(result, int)
+def test_get_phone(monkeypatch):
+    monkeypatch.setattr('builtins.input', lambda _: '123456789')
+    result = get_phone()
+    assert isinstance(result, int)
 
-class Testget_address(unittest.TestCase):
-    @patch('builtins.input', side_effect=['1219 Edgewood Street'])
-    def test_if_input_is_a_string(self, mock_input):
-        result = get_address()
-        self.assertIsInstance(result, str)
+def test_get_address(monkeypatch):
+    monkeypatch.setattr('builtins.input', lambda _: '1219 Edgewood Street')
+    result = get_address()
+    assert isinstance(result, str)
 
-class Testget_references(unittest.TestCase):
-    @patch('builtins.input', side_effect=[
-        '123', 'Home1',
-        '456', 'Home2',
-        '789', 'Home3'])
-    def test_if_input_is_list_of_tuples(self, mock_input) :
-        result = get_references()
-        self.assertIsInstance(result, list)
-        self.assertIsInstance(result[0], tuple)
+def test_get_references(monkeypatch):
+    inputs = iter(['123', 'Home1', '456', 'Home2', '789', 'Home3'])
+    monkeypatch.setattr('builtins.input', lambda _: next(inputs))
+    result = get_references()
+    assert isinstance(result, list)
+    assert isinstance(result[0], tuple)
 
-class Testask_questions(unittest.TestCase):
-    @patch('builtins.input', side_effect=['yes', 'yes', 'yes'])
-    def test_if_input_is_list_of_strings(self, mock_input):
-         result = ask_questions()
-         self.assertIsInstance(result, list)
-         self.assertIsInstance(result[0], str)
+def test_ask_questions(monkeypatch):
+    inputs = iter(['yes', 'yes', 'yes'])
+    monkeypatch.setattr('builtins.input', lambda _: next(inputs))
+    result = ask_questions()
+    assert isinstance(result, list)
+    assert isinstance(result[0], str)
 
-class Testapproval(unittest.TestCase):
-    def test_if_returns_approval(self):
-         result = approval(['yes', 'yes', 'yes'], 'yes', 'M')
-         self.assertEqual(result, "Loan Accepted. Congrats.")
+def test_approval_accepted():
+    result = approval(['yes', 'yes', 'yes'], 'yes', 'M')
+    assert result == "Loan Accepted. Congrats."
 
-class Testapproval_not_approved(unittest.TestCase):
-    def test_if_returns_disapproval_not_employed(self):
-         result = approval(['yes', 'yes', 'yes'], 'no', 'M')
-         self.assertEqual(result, "Loan Denied, Sorry.")
-    
-    def test_if_returns_disapproval_woman(self):
-       result = approval(['yes', 'yes', 'yes'], 'yes', 'F')
-       self.assertEqual(result, "Loan Denied, Sorry.")
-    
-    def test_if_returns_disapproval_answer_no(self):
-        result = approval(['yes', 'no', 'yes'], 'yes', 'M')
-        self.assertEqual(result, "Loan Denied, Sorry.")
+def test_approval_not_employed():
+    result = approval(['yes', 'yes', 'yes'], 'no', 'M')
+    assert result == "Loan Denied, Sorry."
+
+def test_approval_female():
+    result = approval(['yes', 'yes', 'yes'], 'yes', 'F')
+    assert result == "Loan Denied, Sorry."
+
+def test_approval_answer_no():
+    result = approval(['yes', 'no', 'yes'], 'yes', 'M')
+    assert result == "Loan Denied, Sorry."
