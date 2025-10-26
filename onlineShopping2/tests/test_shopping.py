@@ -1,5 +1,5 @@
 import pytest
-from shopping_simulator_solution import *
+from solution_code.shopping_simulator_solution import *
 import csv
 import random
 
@@ -11,7 +11,7 @@ products = []
 categories = []
 prices = []
 
-with open("./products.csv", newline='') as fh:
+with open('../student_facing_code/products.csv', newline='') as fh:
     reader = csv.DictReader(fh)
     for row in reader:
         products.append(row["Product Name"])

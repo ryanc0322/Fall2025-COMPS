@@ -12,6 +12,9 @@ persistent=yes
 # Minimum Python version 
 py-version=3.11
 
+# Variable name module 
+load-plugins=module.variable_name_module
+
 
 [REPORTS]
 

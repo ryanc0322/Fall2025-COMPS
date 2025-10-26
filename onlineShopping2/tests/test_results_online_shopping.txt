@@ -1,0 +1,37 @@
+Test Functions (Pytest)
+
+============================= test session starts =============================
+platform win32 -- Python 3.11.9, pytest-8.4.2, pluggy-1.5.0 -- C:\Users\chloe\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\python.exe
+cachedir: .pytest_cache
+rootdir: C:\Users\chloe\COMPS\Fall2025-COMPS\onlineShopping2\tests
+collecting ... collected 14 items
+
+test_shopping.py::test_empty_functions PASSED                            [  7%]
+test_shopping.py::test_offer_product_keys PASSED                         [ 14%]
+test_shopping.py::test_offer_product_valid_row PASSED                    [ 21%]
+test_shopping.py::test_offer_product_randomness PASSED                   [ 28%]
+test_shopping.py::test_apply_purchase PASSED                             [ 35%]
+test_shopping.py::test_create_payment_plan_structure PASSED              [ 42%]
+test_shopping.py::test_create_payment_plan_amount PASSED                 [ 50%]
+test_shopping.py::test_apply_payment_plans_total_payment PASSED          [ 57%]
+test_shopping.py::test_apply_payment_plans_decrement PASSED              [ 64%]
+test_shopping.py::test_apply_payment_plans_removal PASSED                [ 71%]
+test_shopping.py::test_apply_discount_random_apply PASSED                [ 78%]
+test_shopping.py::test_apply_discount_random_value PASSED                [ 85%]
+test_shopping.py::test_apply_discount_flag PASSED                        [ 92%]
+test_shopping.py::test_apply_discount_correct_calculation PASSED         [100%]
+
+============================= 14 passed in 0.03s ==============================
+
+
+Test Style (Pylint)
+************* Module solution_code.shopping_simulator_solution
+C:\Users\chloe\COMPS\Fall2025-COMPS\onlineShopping2\solution_code\shopping_simulator_solution.py:94:0: C0301: Line too long (87/80) (line-too-long)
+C:\Users\chloe\COMPS\Fall2025-COMPS\onlineShopping2\solution_code\shopping_simulator_solution.py:77:4: C0103: Variable name "newBalance" doesn't conform to '[a-z_][a-z0-9_]{2,30}$' pattern ('[a-z_][a-z0-9_]{2,30}$' pattern) (invalid-name)
+C:\Users\chloe\COMPS\Fall2025-COMPS\onlineShopping2\solution_code\shopping_simulator_solution.py:123:8: C0103: Variable name "p" doesn't conform to '[a-z_][a-z0-9_]{2,30}$' pattern ('[a-z_][a-z0-9_]{2,30}$' pattern) (invalid-name)
+C:\Users\chloe\COMPS\Fall2025-COMPS\onlineShopping2\solution_code\shopping_simulator_solution.py:1:0: C9001: Inconsistent variable naming style: found both snake_case and camelCase variables. (inconsistent-variable-style)
+
+------------------------------------------------------------------
+Your code has been rated at 9.29/10 (previous run: 9.29/10, +0.00)
+
+
