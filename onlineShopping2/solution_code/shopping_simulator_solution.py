@@ -74,8 +74,8 @@ def apply_purchase(balance, cost):
     Returns:
     new_balance (float): the updated balance
     """
-    new_balance = balance - cost
-    return new_balance
+    newBalance = balance - cost
+    return newBalance
 
 def create_payment_plan(payment_plans, product_price):
     """
