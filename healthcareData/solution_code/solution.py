@@ -202,13 +202,3 @@ plt.title("Cancer Patients by Age Group at Henderson-Johnson Hospital")
 plt.xlabel("Age Group")
 plt.ylabel("Number of Patients")
 plt.close()  # prevents pop-up in testing
-
-
-
-# x=1      # W0311: bad indentation
-# y=2      
-# z = x + y 
-# z   # W0104: pointless statement
-# result = (x + y) * b
-# 10 + 5  # W0106: expression not assigned
-# a = 1; b = 2; c = a + b  # C0321: multiple statements on one line
