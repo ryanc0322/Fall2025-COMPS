@@ -4,7 +4,7 @@ import os
 import pytest
 import re
 import builtins
-from solution_code.workInfo import checkList
+from solution_code.workInfo import *
 from solution_code.workPlannerSolution import *
 
 
