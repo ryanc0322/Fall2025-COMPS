@@ -1,5 +1,4 @@
 """
-Ryan Choi
 Description: Script to test healthcareData_student and solution_code
 using Pytest and Pylint. Results written to a text file.
 """
