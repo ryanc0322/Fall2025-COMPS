@@ -1,5 +1,4 @@
-from workInfo import checkList
-from workInfo import day_multipliers, neighborhood_multipliers
+from workInfo import *
 
 
 def amount_made_func(base_pay, num_jobs_per_hr, hours, day_multiplier, neighborhood_multiplier):

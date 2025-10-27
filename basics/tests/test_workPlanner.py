@@ -4,9 +4,9 @@ import os
 import pytest
 import re
 import builtins
-from workInfo import checkList
-from workPlannerSolution import main
-from workPlannerSolution import amount_made_func, deduction_func, value_func
+from solution_code.workInfo import checkList
+from solution_code.workPlannerSolution import *
+
 
 def _run_main_with_inputs(inputs):
     it = iter(inputs)

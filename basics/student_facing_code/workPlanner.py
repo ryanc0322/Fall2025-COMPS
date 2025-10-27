@@ -2,7 +2,7 @@ import workInfo as wi
 '''
 workPlanner.py
 
-Ava Amthauer and Chloe Simanek
+Ava Amthauer and Chloe Simanek and Jamal Omosun
 
 Description: Program for delivery drivers to calculate their expected weekly income. 
 Inspired by the "Work Planner" from the paper "Stakeholder-Centered AI Design: Co-Designing
