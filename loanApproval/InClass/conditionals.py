@@ -1,38 +1,38 @@
-# =============================
-# Concept 1: If, Elif, Else
-# =============================
-# Example 1: Simple condition
-temperature = 32
-if temperature > 30:
-    print("It's hot today!")
+# ============================================================
+# Concept 1: If, Elif, Else — Fairness & Avoiding Bias
+# ============================================================
+# Example 1: Simple condition (weather service)
+temperature = 38
+if temperature > 35:
+    print("It is very hot today. Make sure to stay hydrated.")
 
-# Example 2: If-else
+# Example 2: If-else — Fair decision making
+# Imagine a voting system that checks eligibility
 age = 16
 if age >= 18:
-    print("You can vote!")
+    print("You can vote")
 else:
-    print("You are too young to vote.")
+    print("You are currently too young to vote")
 
-# Example 3: If-Elif-Else chain
+# Example 3: If-Elif-Else chain — grading without judgment
 score = 99
 if score >= 90:
-    print("Grade: A")
+    print("Grade: A — Excellent work")
 elif score >= 80:
-    print("Grade: B")
+    print("Grade: B — Great job")
 elif score >= 70:
-    print("Grade: C")
+    print("Grade: C — Keep practicing")
 else:
-    print("Grade: F")
+    print("Grade: F — Please study more")
 
-# Activity 1:
-# Write a code that checks if a number is positive, negative, or zero.
+# Reflection prompt for students:
+# How can conditional systems accidentally treat people unfairly?
+# (Examples: financial systems, job application filters, age-based services)
 
-# Activity 2:
-# Ask the user for their age and print whether they’re a child, teen, or adult.
-
-# Activity 3:
-# Ask for today’s temperature and print whether it’s “cold,” “warm,” or “hot.”
-
+# Activities
+# 1) Classify numbers as positive/negative/zero respectfully.
+# 2) Age categories: child, teen, adult — avoid stereotypes (every stage matters).
+# 3) Weather categories: cold, warm, hot — include health/safety advice.
 
 
 # ======================================================
@@ -64,14 +64,15 @@ else:
     print("Work harder...")
 
 
-# Activity 1:
-# Ask the user for a number. Print whether it’s even and greater than 10.
+# Reflection prompt:
+# Systems classify people — in what ways should we use conditionals to not marginalize people?
+# (Loan approvals, school placement, job screening — we must design fairly)
 
-# Activity 2:
-# Write a simple code that checks whether today is Monday or Friday.
 
-# Challenge: 
-# Write a code that checks if a number is divisible by both 3 and 5
+# Activities:
+# 1) Ask the user for a number. Print whether it’s even and greater than 10.
+# 2) Write a simple code that checks whether today is Monday or Friday.
+# 3) Challenge: Write a code that checks if a number is divisible by both 3 and 5
 
 
 
@@ -108,15 +109,13 @@ while attempts > 0:
 if attempts == 0:
     print("Access denied. Try again later.")
 
+# Reflection prompt:
+# When you design a program that makes decisions (like checking passwords 
+# or choosing what to print), how can those decisions affect real people?
+# What should you keep in mind to ensure fairness and respect?
 
-# Activity 1:
-# Write a loop that counts forever but stops if the user types "stop".
-
-# Activity 2:
-# Print numbers 1–10, but skip multiples of 3.
-
-# Activity 3:
-# Create a loop that asks for names and stops when the user types "done".
-
-# Challenge:
-# Write a loop that counts to 100 but only prints numbers divisible by 5.
+# Activities:
+# 1) Write a loop that counts forever but stops if the user types "stop".
+# 2) Print numbers 1–10, but skip multiples of 3.
+# 3) Create a loop that asks for names and stops when the user types "done".
+# 4) Challenge: Write a loop that counts to 100 but only prints numbers divisible by 5.

@@ -17,17 +17,18 @@ for num in numbers:
     total += num
 print(f"Total: {total}")
 
-# Activity 1:
-# Write a for loop that prints the numbers from 10 to 20.
 
-# Activity 2:
-# Print every fruit from this list: ["apple", "banana", "cherry", "kiwi"].
+# Reflection:
+# For loops help us automate tasks by repeating actions. In real systems (ex: grade books, 
+# email systems, job applications), loops might process thousands of people or decisions at once — fast.
+# If your loop accidentally skipped someone or processed a name incorrectly, how could that 
+# affect them?
 
-# Activity 3:
-# Write a loop that sums all numbers from 1 to 100 and then print the sum.
-
-# Challenge: 
-# Print all even numbers from 2 to 100.
+# Activities:
+# 1) Write a for loop that prints the numbers from 10 to 20.
+# 2) Print every fruit from this list: ["apple", "banana", "cherry", "kiwi"].
+# 3) Write a loop that sums all numbers from 1 to 100 and then print the sum.
+# 4) Challenge: Print only the even numbers from 2 to 100.
 
 
 
@@ -60,17 +61,17 @@ print("Temperature too high!")
 # while True:
 #     print("This will never stop! (unless you press ctrl-c)")
 
-# Activity 1: 
-# Write a while loop  counting from 1 to 10.
+# Reflection:
+# While loops continue until a condition changes. In real-world applications (ex: login attempts,
+# data processing), an infinite loop could lock someone out of their account or crash a system.
+# How can you design while loops to ensure they always reach a stopping point safely while also
+# preserving security integrity (not allowing someone an infinite number of password attempts)?
 
-# Activity 2:
-# Create a password checker that keeps asking for input until the user types "openplease123!".
-
-# Activity 3:
-# Write a program that continuously prints “Loading...” until a variable counts up and reaches 100.
-
-# Challenge:
-# Create a very simple guessing game that allows only 3 chances to guess correctly.
+# Activities:
+# 1) Write a while loop  counting from 1 to 10.
+# 2) Create a password checker that keeps asking for input until the user types "openplease123!".
+# 3) Write a program that continuously prints “Loading...” until a variable counts up and reaches 100.
+# 4) Challenge: Create a very simple guessing game that allows only 3 chances to guess correctly.
 
 
 
@@ -97,16 +98,16 @@ for x in range(3):
     print()
 
 
-# Activity 1:
-# Write a nested loop to print a 5×5 grid of stars (*).
+# Reflection: How could nested loops accidentally create unequal or biased outcomes?
+# For example, if a seating chart loop accidentally skips a row or seat, some people
+# might not get assigned a seat. When designing nested loops, how can you ensure that every
+# individual is treated fairly and equally?
 
-# Activity 2:
-# Use nested loops to print combinations of shirts and pants below
+# Activities:
+# 1) Write a nested loop to print a 5×5 grid of stars (*).
+# 2) Use nested loops to print combinations of shirts and pants below
 shirts = ["red", "blue"]
 pants = ["black", "white"]
 
-# Activity 3:
-# Write a nested loop that prints all possible pairs of numbers from 1 to 3 and 4 to 6.
-
-# Challenge:
-# Build a mini multiplication table for numbers 1–5.
+# 3) Write a nested loop that prints all possible pairs of numbers from 1 to 3 and 4 to 6.
+# 4) Challenge: Build a mini multiplication table for numbers 1–5.
