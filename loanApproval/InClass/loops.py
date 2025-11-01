@@ -99,9 +99,10 @@ for x in range(3):
 
 
 # Reflection: How could nested loops accidentally create unequal or biased outcomes?
-# For example, if a seating chart loop accidentally skips a row or seat, some people
-# might not get assigned a seat. When designing nested loops, how can you ensure that every
-# individual is treated fairly and equally?
+# Think about a real-world situation where a nested for-loop is likely to be used, and another 
+# real-world situation where a nested while-loop is likely to be used. For each cases, what
+# would be a way to distinguish between the data / item iterating through the loop? When 
+# would it be inappropriate to make such distinguishment across the item? 
 
 # Activities:
 # 1) Write a nested loop to print a 5×5 grid of stars (*).
