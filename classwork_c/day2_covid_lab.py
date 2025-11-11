@@ -1,50 +1,54 @@
 """
+Working with Datasets in Python
+Day 2: Lab
 
-Day 2 
+Chloe Simanek
 
+Student name: *****
 """
 
+# Import the data 
+
+data = []
+
 with open('covid.csv') as file:
-    lines = file.readlines()  
-    lines = lines[1:]         
+    next(file)  
+    for line in file:  
+        line = line.strip()
+        fields = line.split(",")
+        data.append(fields)  
 
-data = []  
+# ----------------------------------------------------------
 
-for line in lines:
-    line = line.strip()     
-    fields = line.split(",") 
-    data.append(fields)   
+# Total positive cases 
 
-# YOUR CODE BELOW
+# YOUR CODE HERE
 
-most_cases = 0
-state_with_most_cases = ""
-for row in data:
-    cases = float(row[2])
-    if cases > most_cases:
-        most_cases = cases
-        state_with_most_cases = row[1]
+# ----------------------------------------------------------
 
-print(f"{state_with_most_cases} had {most_cases} cases")
+# Average number of positive cases
 
-least_cases = float('inf')
-state_with_least_cases = ""
-for row in data: 
-    cases = float(row[2])
-    if cases < least_cases:
-        least_cases = cases
-        state_with_least_cases = row[1]
-print(f"{state_with_least_cases} had {least_cases} cases")
+# YOUR CODE HERE
 
-total_cases = 0
-for row in data: 
-    cases = float(row[2])
-    total_cases += cases
+# ----------------------------------------------------------
 
-print(total_cases)
+# Do you think using the average in a report of positive
+# cases in the United States makes sense? Why or why not?
 
-average = total_cases / 50
-print(average)
+# YOUR ANSWER HERE
 
-percent = most_cases / total_cases
-print(percent)
+# ----------------------------------------------------------
+
+# What other data would you like to have when looking at
+# this dataset? 
+
+# YOUR ANSWER HERE
+
+# ----------------------------------------------------------
+
+# Percent of total cases the state with the most
+# cases made up
+
+# YOUR CODE HERE
+
+# ----------------------------------------------------------
