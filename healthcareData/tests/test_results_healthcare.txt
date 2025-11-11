@@ -1,16 +1,16 @@
 Test Functions (Pytest)
 
 ============================= test session starts ==============================
-platform darwin -- Python 3.11.6, pytest-8.4.2, pluggy-1.6.0 -- /Users/ryanchoi/Desktop/Carleton/Senior/Fall2025/venv/bin/python
+platform darwin -- Python 3.11.6, pytest-9.0.0, pluggy-1.6.0 -- /Users/ryanchoi/Desktop/Carleton/Senior/Fall2025/Fall2025-COMPS/venv/bin/python
 cachedir: .pytest_cache
-rootdir: /Users/ryanchoi/Desktop/Carleton/Senior/Fall2025/Fall2025-COMPS1/healthcareData/tests
+rootdir: /Users/ryanchoi/Desktop/Carleton/Senior/Fall2025/Fall2025-COMPS/healthcareData/tests
 collecting ... collected 3 items
 
 test_healthcare.py::test_part1_data_loading PASSED                       [ 33%]
 test_healthcare.py::test_part2_demographics PASSED                       [ 66%]
 test_healthcare.py::test_part3_hospital_representation PASSED            [100%]
 
-============================== 3 passed in 0.68s ===============================
+============================== 3 passed in 0.59s ===============================
 
 
 Test Style (Pylint)
@@ -20,30 +20,19 @@ Test Style (Pylint)
 ************* Module Command line or configuration file
 Command line or configuration file:1:0: E0013: Plugin 'module.variable_name_module' is impossible to load, is it installed ? ('No module named 'module'') (bad-plugin-value)
 ************* Module solution
-/Users/ryanchoi/Desktop/Carleton/Senior/Fall2025/Fall2025-COMPS1/healthcareData/solution_code/solution.py:13:12: C0303: Trailing whitespace (trailing-whitespace)
-/Users/ryanchoi/Desktop/Carleton/Senior/Fall2025/Fall2025-COMPS1/healthcareData/solution_code/solution.py:27:21: C0303: Trailing whitespace (trailing-whitespace)
-/Users/ryanchoi/Desktop/Carleton/Senior/Fall2025/Fall2025-COMPS1/healthcareData/solution_code/solution.py:28:40: C0303: Trailing whitespace (trailing-whitespace)
-/Users/ryanchoi/Desktop/Carleton/Senior/Fall2025/Fall2025-COMPS1/healthcareData/solution_code/solution.py:44:0: C0301: Line too long (98/80) (line-too-long)
-/Users/ryanchoi/Desktop/Carleton/Senior/Fall2025/Fall2025-COMPS1/healthcareData/solution_code/solution.py:45:0: C0301: Line too long (104/80) (line-too-long)
-/Users/ryanchoi/Desktop/Carleton/Senior/Fall2025/Fall2025-COMPS1/healthcareData/solution_code/solution.py:125:0: C0301: Line too long (88/80) (line-too-long)
-/Users/ryanchoi/Desktop/Carleton/Senior/Fall2025/Fall2025-COMPS1/healthcareData/solution_code/solution.py:178:0: C0301: Line too long (90/80) (line-too-long)
-/Users/ryanchoi/Desktop/Carleton/Senior/Fall2025/Fall2025-COMPS1/healthcareData/solution_code/solution.py:197:0: C0301: Line too long (87/80) (line-too-long)
-/Users/ryanchoi/Desktop/Carleton/Senior/Fall2025/Fall2025-COMPS1/healthcareData/solution_code/solution.py:209:5: C0303: Trailing whitespace (trailing-whitespace)
-/Users/ryanchoi/Desktop/Carleton/Senior/Fall2025/Fall2025-COMPS1/healthcareData/solution_code/solution.py:210:11: C0303: Trailing whitespace (trailing-whitespace)
-/Users/ryanchoi/Desktop/Carleton/Senior/Fall2025/Fall2025-COMPS1/healthcareData/solution_code/solution.py:93:0: W1405: Quote delimiter ' is inconsistent with the rest of the file (inconsistent-quotes)
-/Users/ryanchoi/Desktop/Carleton/Senior/Fall2025/Fall2025-COMPS1/healthcareData/solution_code/solution.py:95:0: W1405: Quote delimiter ' is inconsistent with the rest of the file (inconsistent-quotes)
-/Users/ryanchoi/Desktop/Carleton/Senior/Fall2025/Fall2025-COMPS1/healthcareData/solution_code/solution.py:1:0: C0114: Missing module docstring (missing-module-docstring)
-/Users/ryanchoi/Desktop/Carleton/Senior/Fall2025/Fall2025-COMPS1/healthcareData/solution_code/solution.py:4:0: W0105: String statement has no effect (pointless-string-statement)
-/Users/ryanchoi/Desktop/Carleton/Senior/Fall2025/Fall2025-COMPS1/healthcareData/solution_code/solution.py:8:0: C0103: Constant name "filename" doesn't conform to UPPER_CASE naming style ('([^\\W\\da-z][^\\Wa-z]*|__.*__)$' pattern) (invalid-name)
-/Users/ryanchoi/Desktop/Carleton/Senior/Fall2025/Fall2025-COMPS1/healthcareData/solution_code/solution.py:25:5: W1514: Using open without explicitly specifying an encoding (unspecified-encoding)
-/Users/ryanchoi/Desktop/Carleton/Senior/Fall2025/Fall2025-COMPS1/healthcareData/solution_code/solution.py:50:0: W0105: String statement has no effect (pointless-string-statement)
-/Users/ryanchoi/Desktop/Carleton/Senior/Fall2025/Fall2025-COMPS1/healthcareData/solution_code/solution.py:73:0: C0103: Constant name "total_patients" doesn't conform to UPPER_CASE naming style ('([^\\W\\da-z][^\\Wa-z]*|__.*__)$' pattern) (invalid-name)
-/Users/ryanchoi/Desktop/Carleton/Senior/Fall2025/Fall2025-COMPS1/healthcareData/solution_code/solution.py:138:0: W0105: String statement has no effect (pointless-string-statement)
-/Users/ryanchoi/Desktop/Carleton/Senior/Fall2025/Fall2025-COMPS1/healthcareData/solution_code/solution.py:143:0: C0103: Constant name "henderson_johnson_admission_dates" doesn't conform to UPPER_CASE naming style ('([^\\W\\da-z][^\\Wa-z]*|__.*__)$' pattern) (invalid-name)
-/Users/ryanchoi/Desktop/Carleton/Senior/Fall2025/Fall2025-COMPS1/healthcareData/solution_code/solution.py:144:0: C0200: Consider using enumerate instead of iterating with range and len (consider-using-enumerate)
-/Users/ryanchoi/Desktop/Carleton/Senior/Fall2025/Fall2025-COMPS1/healthcareData/solution_code/solution.py:177:0: C0200: Consider using enumerate instead of iterating with range and len (consider-using-enumerate)
+/Users/ryanchoi/Desktop/Carleton/Senior/Fall2025/Fall2025-COMPS/healthcareData/solution_code/solution.py:93:0: W1405: Quote delimiter ' is inconsistent with the rest of the file (inconsistent-quotes)
+/Users/ryanchoi/Desktop/Carleton/Senior/Fall2025/Fall2025-COMPS/healthcareData/solution_code/solution.py:95:0: W1405: Quote delimiter ' is inconsistent with the rest of the file (inconsistent-quotes)
+/Users/ryanchoi/Desktop/Carleton/Senior/Fall2025/Fall2025-COMPS/healthcareData/solution_code/solution.py:4:0: W0105: String statement has no effect (pointless-string-statement)
+/Users/ryanchoi/Desktop/Carleton/Senior/Fall2025/Fall2025-COMPS/healthcareData/solution_code/solution.py:8:0: C0103: Constant name "filename" doesn't conform to UPPER_CASE naming style ('([^\\W\\da-z][^\\Wa-z]*|__.*__)$' pattern) (invalid-name)
+/Users/ryanchoi/Desktop/Carleton/Senior/Fall2025/Fall2025-COMPS/healthcareData/solution_code/solution.py:25:5: W1514: Using open without explicitly specifying an encoding (unspecified-encoding)
+/Users/ryanchoi/Desktop/Carleton/Senior/Fall2025/Fall2025-COMPS/healthcareData/solution_code/solution.py:50:0: W0105: String statement has no effect (pointless-string-statement)
+/Users/ryanchoi/Desktop/Carleton/Senior/Fall2025/Fall2025-COMPS/healthcareData/solution_code/solution.py:73:0: C0103: Constant name "total_patients" doesn't conform to UPPER_CASE naming style ('([^\\W\\da-z][^\\Wa-z]*|__.*__)$' pattern) (invalid-name)
+/Users/ryanchoi/Desktop/Carleton/Senior/Fall2025/Fall2025-COMPS/healthcareData/solution_code/solution.py:138:0: W0105: String statement has no effect (pointless-string-statement)
+/Users/ryanchoi/Desktop/Carleton/Senior/Fall2025/Fall2025-COMPS/healthcareData/solution_code/solution.py:143:0: C0103: Constant name "henderson_johnson_admission_dates" doesn't conform to UPPER_CASE naming style ('([^\\W\\da-z][^\\Wa-z]*|__.*__)$' pattern) (invalid-name)
+/Users/ryanchoi/Desktop/Carleton/Senior/Fall2025/Fall2025-COMPS/healthcareData/solution_code/solution.py:144:0: C0200: Consider using enumerate instead of iterating with range and len (consider-using-enumerate)
+/Users/ryanchoi/Desktop/Carleton/Senior/Fall2025/Fall2025-COMPS/healthcareData/solution_code/solution.py:177:0: C0200: Consider using enumerate instead of iterating with range and len (consider-using-enumerate)
 
 ------------------------------------------------------------------
-Your code has been rated at 8.54/10 (previous run: 7.75/10, +0.79)
+Your code has been rated at 9.27/10 (previous run: 9.27/10, +0.00)
 
 

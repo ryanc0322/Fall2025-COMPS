@@ -1,0 +1,164 @@
+[MAIN]
+
+# Score threshold 
+fail-under=10
+
+# Use multiple processes to speed up Pylint
+jobs=1
+
+# Pickle collected data for later comparisons
+persistent=yes
+
+# Minimum Python version 
+py-version=3.11
+
+# Variable name module 
+load-plugins=module.variable_name_module
+
+
+[REPORTS]
+
+# Activate the evaluation score
+score=yes
+
+# Detailed report summary
+reports=no
+
+
+[BASIC]
+
+# Naming style 
+argument-naming-style=snake_case
+variable-rgx=[a-z_][a-z0-9_]{2,30}$
+variable-naming-style=snake_case
+function-naming-style=snake_case
+
+# Bad variable names which should always be refused, separated by a comma.
+bad-names=foo,
+          bar,
+          baz,
+          toto,
+          tutu,
+          tata
+
+include-naming-hint=yes
+
+# Minimum line length for functions/classes that require docstrings, shorter
+# ones are exempt.
+docstring-min-length=10
+
+# Good variable names which should always be accepted, separated by a comma.
+good-names=i,
+           j,
+           k,
+           ex,
+           Run,
+           f
+
+[DESIGN]
+# Default 
+
+# Maximum number of arguments for function / method.
+max-args=5
+
+# Maximum number of boolean expressions in an if statement (see R0916).
+max-bool-expr=5
+
+# Maximum number of branch for function / method body.
+max-branches=12
+
+# Maximum number of locals for function / method body.
+max-locals=15
+
+# Maximum number of positional arguments for function / method.
+max-positional-arguments=5
+
+# Maximum number of return / yield for function / method body.
+max-returns=6
+
+# Maximum number of statements in function / method body.
+max-statements=50
+
+[FORMAT]
+
+# Expected format of line ending, e.g. empty (any line ending), LF or CRLF.
+expected-line-ending-format=
+
+# Indents
+indent-after-paren=4
+indent-string='    '
+
+# Maximum number of characters on a single line. 
+max-line-length=150
+
+# Allow the body of an if to be on the same line as the test if there is no
+# else.
+single-line-if-stmt=no
+
+
+[MISCELLANEOUS]
+
+# List of note tags to take in consideration, separated by a comma.
+notes=TODO
+
+disable=
+    C0114,  # Missing module docstring
+    C0115,  # Missing class docstring
+    R0903,  # Too few public methods
+    R0902,  # Too many instance attributes
+    R0913,  # Too many arguments
+    R0914,  # Too many local variables
+    R0915,  # Too many statements
+    W0703,  # Catching too general exception
+    W0511,   # TODO/FIXME comments
+    C0303
+
+enable=
+    W0311,  # Bad indentation
+    W0101,  # Unreachable code
+    W0104,  # Pointless statement
+    W0106,  # Expression not assigned
+    W0611,  # Unused import
+    W0612,  # Unused variable
+    W0613,  # Unused argument
+    W0631,  # Undefined loop variable
+    W0641,  # Possibly unused variable
+    W1301,  # Unused format string key
+    W1304,  # Unused string format argument
+    W1514,  # Unspecified encoding
+    W0120,  # Useless else on loop
+    C0116,  # Missing function docstring
+    C0321,  # Multiple statements on one line
+    C0413,  # Wrong import position
+    R0801,  # Duplicate code
+    R1709,  # Simplify boolean expression
+    R1710,  # Inconsistent return statement
+    R1719,  # Simplifiable “if” expression
+    R1726,  # Simplifiable condition
+    R2044,  # Empty comment
+    R1705   # Unnecessary "else" after return
+
+
+
+[SIMILARITIES]
+
+# The following are removed from the similarity computation:
+ignore-comments=yes
+ignore-docstrings=yes
+ignore-imports=yes
+ignore-signatures=yes
+
+# Minimum lines number of a similarity.
+min-similarity-lines=4
+
+
+[STRING]
+
+# This flag controls whether inconsistent-quotes generates a warning when the
+# character used as a quote delimiter is used inconsistently within a module.
+check-quote-consistency=yes
+
+# This flag controls whether the implicit-str-concat should generate a warning
+# on implicit string concatenation in sequences defined over several lines.
+check-str-concat-over-line-jumps=yes
+
