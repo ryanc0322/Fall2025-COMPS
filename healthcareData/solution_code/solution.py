@@ -201,4 +201,4 @@ plt.bar(age_groups, age_counts)
 plt.title("Cancer Patients by Age Group at Henderson-Johnson Hospital")
 plt.xlabel("Age Group")
 plt.ylabel("Number of Patients")
-plt.close()  # prevents pop-up in testing
+plt.show()  # prevents pop-up in testing
