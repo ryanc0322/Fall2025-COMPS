@@ -25,13 +25,16 @@ test_shopping.py::test_apply_discount_correct_calculation PASSED         [100%]
 
 
 Test Style (Pylint)
+
+************* Module .pylintrc
+.pylintrc:1:0: W0012: Unknown option value for '--enable', expected a valid pylint message and got 'R2044' (unknown-option-value)
+************* Module Command line or configuration file
+Command line or configuration file:1:0: E0013: Plugin 'module.variable_name_module' is impossible to load, is it installed ? ('No module named 'module'') (bad-plugin-value)
 ************* Module solution_code.shopping_simulator_solution
-C:\Users\chloe\COMPS\Fall2025-COMPS\onlineShopping2\solution_code\shopping_simulator_solution.py:94:0: C0301: Line too long (87/80) (line-too-long)
-C:\Users\chloe\COMPS\Fall2025-COMPS\onlineShopping2\solution_code\shopping_simulator_solution.py:77:4: C0103: Variable name "newBalance" doesn't conform to '[a-z_][a-z0-9_]{2,30}$' pattern ('[a-z_][a-z0-9_]{2,30}$' pattern) (invalid-name)
-C:\Users\chloe\COMPS\Fall2025-COMPS\onlineShopping2\solution_code\shopping_simulator_solution.py:123:8: C0103: Variable name "p" doesn't conform to '[a-z_][a-z0-9_]{2,30}$' pattern ('[a-z_][a-z0-9_]{2,30}$' pattern) (invalid-name)
-C:\Users\chloe\COMPS\Fall2025-COMPS\onlineShopping2\solution_code\shopping_simulator_solution.py:1:0: C9001: Inconsistent variable naming style: found both snake_case and camelCase variables. (inconsistent-variable-style)
+C:\Users\chloe\COMPS\Fall2025-COMPS\onlineShopping2\solution_code\shopping_simulator_solution.py:28:13: W1514: Using open without explicitly specifying an encoding (unspecified-encoding)
+C:\Users\chloe\COMPS\Fall2025-COMPS\onlineShopping2\solution_code\shopping_simulator_solution.py:128:8: C0103: Variable name "p" doesn't conform to '[a-z_][a-z0-9_]{2,30}$' pattern ('[a-z_][a-z0-9_]{2,30}$' pattern) (invalid-name)
 
 ------------------------------------------------------------------
-Your code has been rated at 9.29/10 (previous run: 9.29/10, +0.00)
+Your code has been rated at 9.64/10 (previous run: 9.29/10, +0.36)
 
 
