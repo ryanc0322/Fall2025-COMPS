@@ -34,6 +34,14 @@ day_multiplier = wi.checkList(days)
 
 # TODO: Your calculations go here
 
+def amount_made_func(base_pay, num_jobs_per_hr, hours, day_multiplier, neighborhood_multiplier):
+
+
+def deduction_func(miles_traveled, fuel_efficiency, cost_of_fuel):
+
+
+def value_func(amount_made, deduction):
+
 
 '''
 Part 3: Tying it Together: User Input
@@ -42,3 +50,9 @@ You can comment out all the hard-coded variables that you used beforehand.
 You can do this in VS code by using either Ctrl + / or Cmd + /.
 '''
 # TODO: Your code goes here 
+
+def main():
+
+    
+if __name__=="__main__":
+    main()
