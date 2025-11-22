@@ -1,0 +1,1 @@
+First draft code for the functions assignment. 
