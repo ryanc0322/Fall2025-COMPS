@@ -1,12 +1,12 @@
 """
-Description: Script to test loanApproval_bad.py and solution_code
+Description: Script to test loanApproval_bad.py and and the test file
 using Pytest and Pylint. Results written to a text file.
 """
 
 import subprocess
 
 pytest_command = ["python", "-m", "pytest", "-v", "test_loan_bad.py"]
-pylint_command = ["python", "-m", "pylint", "--rcfile=.pylintrc", "../ProductionCode/solution.py"]
+pylint_command = ["python", "-m", "pylint", "--rcfile=.pylintrc", "../ProductionCode/loanApproval_bad.py"]
 
 run_pytest = subprocess.run(pytest_command, capture_output=True, text=True)
 run_pylint = subprocess.run(pylint_command, capture_output=True, text=True)
