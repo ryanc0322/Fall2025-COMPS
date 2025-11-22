@@ -1,0 +1,16 @@
+* all tests are run from /tests 
+
+pytests:
+    -> python -m pytest -v
+
+coverage: 
+    -> python -m coverage run -m pytest
+    -> python -m coverage html 
+    -> start htmlcov/index.html
+
+pylint: 
+    -> python -m pylint --rcfile=.pylintrc ../solution_code/workPlannerSolution.py
+
+
+test script: 
+    -> python test_workPlanner.py
