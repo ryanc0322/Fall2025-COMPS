@@ -1,10 +1,13 @@
 '''
 Lab 1: Let's Get Started
-Ava Amthauer
+Written by: Ava Amthauer
 '''
 
 '''
+This is a main function.  You should put your code here in order to get out your answers.
+To get the code to run, in the terminal you should put: python3 Lab1.py
 
+Do not remove the final tag at the end, that is what causes the code to run.
 '''
 def main() :
 
@@ -31,16 +34,24 @@ the terminal window.
 
 '''
 Tip Calculator
+Pick two different percentages to generate a tip amount for and then print out result to
+the termial window.
 '''
     ##PUT YOUR CODE HERE##
 
 '''
 Personal Expenses Calculator
+Create variables for how much you spend and how much you make during a week and then
+calculate your net amount spent.  If you want to go a step beyond, you can also estimate the net
+amount spent for a year based on that weekly spending.  Then print out the results to the terminal window.
 '''
     ##PUT YOUR CODE HERE##
 
 '''
 GPA Calculator
+This is a bonus part of the assignment.  Use the values provided to you in the lab to do a calculation
+of your GPA for a previous term of classes you have taken, either in college or high school and then print
+the results out to the terminal window.
 '''
     ##PUT YOUR CODE HERE##
 
