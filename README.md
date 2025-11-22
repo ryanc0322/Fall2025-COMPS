@@ -1,2 +1,2 @@
-# Fall2025-COMPS
-Responsibility in CS 111
+# Embedding Social and Civic Responsibility in Introduction to Computer Science 
+Assignments, tests and in-class activities. 
