@@ -1,0 +1,23 @@
+* all tests are run from /Tests 
+
+pytests:
+    -> python -m pytest -v
+
+coverage: 
+    -> python -m coverage run -m pytest
+    -> python -m coverage html 
+    -> start htmlcov/index.html
+
+pylint: 
+    -> python -m pylint --rcfile=.pylintrc ../ProductionCode/loanApproval_bad.py
+    -> python -m pylint --rcfile=.pylintrc ../ProductionCode/loanApproval_mediocre.py
+    -> python -m pylint --rcfile=.pylintrc ../ProductionCode/loanApproval_better.py
+    -> python -m pylint --rcfile=.pylintrc ../ProductionCode/loanApproval_good.py
+
+
+
+test script: 
+    -> python run_test_loan_bad.py
+    -> python run_test_loan_mediocre.py
+    -> python run_test_loan_better.py
+    -> python run_test_loan_good.py
