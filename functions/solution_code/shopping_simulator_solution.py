@@ -42,24 +42,6 @@ def read_items(filename): # pragma: no cover
         sys.exit(1)
     return products, categories, prices
 
-def offer_product(products, categories, prices):
-    """Offer a random product from the available products. 
-
-    Args:
-        products (list): Product names.
-        categories (list): Product categories.
-        prices (list): Product prices.
-
-    Returns:
-        dict: A dictionary with keys "name", "category", and "price". 
-    """
-    idx = random.randrange(len(products))
-    return {
-        "name": products[idx],
-        "category": categories[idx],
-        "price": prices[idx]
-    }
-
 def apply_purchase(balance, cost):
     """Subtract cost from balance.
 
@@ -72,6 +54,25 @@ def apply_purchase(balance, cost):
     """
     new_balance = balance - cost
     return new_balance
+
+def offer_product(products, categories, prices):
+    """Offer a random product from the available products. 
+
+    Args:
+        products (list): Product names.
+        categories (list): Product categories.
+        prices (list): Product prices.
+
+    Returns:
+        dict: A dictionary with keys "name", "category", and "price". 
+    """
+    i = random.randrange(len(products))
+    return {
+        "name": products[i],
+        "category": categories[i],
+        "price": prices[i]
+    }
+
 
 def create_payment_plan(payment_plans, product_price):
     """Create and add a new payment plan to the list.
